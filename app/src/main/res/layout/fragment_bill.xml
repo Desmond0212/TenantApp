@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F9"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BillFragment">
+
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/round_head"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_menu_white_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/lblDashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Account"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager_bills"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="50dp"/>
+
+        <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+            android:id="@+id/dot3_bills"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/view_pager_bills"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="5dp"
+            app:dotsColor="@color/colorYellow"
+            app:selectedDotColor="@color/colorYellow"
+            app:dotsStrokeColor="#A6A6A6"
+            app:dotsSize="10dp"
+            app:dotsSpacing="3dp"
+            app:progressMode="true"/>
+
+        <EditText
+            android:id="@+id/txtSearchBill"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search here..."
+            android:textSize="14sp"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
+            android:background="@drawable/rounded_edit_text_background"
+            android:drawableStart="@drawable/baseline_search_white_24"
+            android:drawablePadding="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/dot3_bills"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:padding="10dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/billsCardView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/txtSearchBill"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:cardCornerRadius="5dp"
+            android:elevation="15dp"
+            android:paddingBottom="20dp">
+
+            <RelativeLayout
+                android:id="@+id/layoutBills1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/lblBill1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BILL0033"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblDate1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="July 11, 2020"
+                    android:textColor="@color/colorBlack"
+                    android:layout_toEndOf="@+id/lblBill1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblTime1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="14:28 pm"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#514DD9"/>
+
+                <TextView
+                    android:id="@+id/lblUsername1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chow Jun Wei"
+                    android:layout_below="@+id/lblBill1"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblStatus1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paid"
+                    android:textColor="#00CFBA"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/lblTime1"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/billsCardView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/billsCardView1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:cardCornerRadius="5dp"
+            android:elevation="15dp"
+            android:paddingBottom="20dp">
+
+            <RelativeLayout
+                android:id="@+id/layoutBills2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/lblBill2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BILL0032"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblDate2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="July 08, 2020"
+                    android:textColor="@color/colorBlack"
+                    android:layout_toEndOf="@+id/lblBill2"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblTime2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9.35 pm"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#514DD9"/>
+
+                <TextView
+                    android:id="@+id/lblUsername2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Darren Chong Teck Chuan"
+                    android:layout_below="@+id/lblBill2"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblStatus2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Overdue"
+                    android:textColor="#FE0065"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/lblTime2"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/billsCardView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/billsCardView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:cardCornerRadius="5dp"
+            android:elevation="15dp"
+            android:paddingBottom="20dp">
+
+            <RelativeLayout
+                android:id="@+id/layoutBills3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/lblBill3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BILL0031"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblDate3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="July 03, 2020"
+                    android:textColor="@color/colorBlack"
+                    android:layout_toEndOf="@+id/lblBill3"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblTime3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="19.35 pm"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#514DD9"/>
+
+                <TextView
+                    android:id="@+id/lblUsername3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Desmond Wong"
+                    android:layout_below="@+id/lblBill3"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblStatus3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paid"
+                    android:textColor="#00CFBA"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/lblTime3"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/billsCardView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/billsCardView3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:cardCornerRadius="5dp"
+            android:elevation="15dp"
+            android:paddingBottom="20dp">
+
+            <RelativeLayout
+                android:id="@+id/layoutBills4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/lblBill4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BILL0030"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblDate4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="June 16, 2020"
+                    android:textColor="@color/colorBlack"
+                    android:layout_toEndOf="@+id/lblBill4"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblTime4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9.35 am"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#514DD9"/>
+
+                <TextView
+                    android:id="@+id/lblUsername4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Darren Chong Teck Chuan"
+                    android:layout_below="@+id/lblBill4"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblStatus4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paid"
+                    android:textColor="#00CFBA"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/lblTime4"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/billsCardView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/billsCardView4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:cardCornerRadius="5dp"
+            android:elevation="15dp"
+            android:paddingBottom="20dp">
+
+            <RelativeLayout
+                android:id="@+id/layoutBills5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/lblBill5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BILL0029"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblDate5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="June 10, 2020"
+                    android:textColor="@color/colorBlack"
+                    android:layout_toEndOf="@+id/lblBill5"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblTime5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9.35 pm"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#514DD9"/>
+
+                <TextView
+                    android:id="@+id/lblUsername5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Desmond Wong"
+                    android:layout_below="@+id/lblBill5"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblStatus5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paid"
+                    android:textColor="#00CFBA"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/lblTime5"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

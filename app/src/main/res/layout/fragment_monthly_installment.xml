@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F9"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MonthlyInstallmentFragment">
+
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/round_head"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_menu_white_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/lblDashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tenants"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager_tenants"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="50dp"/>
+
+        <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+            android:id="@+id/dot3_tenants"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/view_pager_tenants"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="5dp"
+            app:dotsColor="@color/colorYellow"
+            app:selectedDotColor="@color/colorYellow"
+            app:dotsStrokeColor="#A6A6A6"
+            app:dotsSize="10dp"
+            app:dotsSpacing="3dp"
+            app:progressMode="true"/>
+
+        <EditText
+            android:id="@+id/txtSearchBill"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search here..."
+            android:textSize="14sp"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
+            android:background="@drawable/rounded_edit_text_background"
+            android:drawableStart="@drawable/baseline_search_white_24"
+            android:drawablePadding="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/dot3_tenants"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:padding="10dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/billsCardView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/txtSearchBill"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:cardCornerRadius="5dp"
+            android:elevation="15dp"
+            android:paddingBottom="20dp">
+
+            <RelativeLayout
+                android:id="@+id/layoutBills1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/lblBill1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Darren Chong"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblDate1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 years contact"
+                    android:textColor="@color/colorBlack"
+                    android:layout_below="@+id/lblBill1"
+                    android:layout_marginStart="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblTime1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="320 days left"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#514DD9"/>
+
+                <TextView
+                    android:id="@+id/lblRentalPriceTitle1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rental Price:"
+                    android:layout_below="@+id/lblDate1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblAmount1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RM 1200.00 / month"
+                    android:textColor="@color/colorBlack"
+                    android:layout_below="@+id/lblRentalPriceTitle1"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblBillStatus1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last Bill Status:"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_below="@+id/lblDate1"/>
+
+                <TextView
+                    android:id="@+id/lblStatus1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Overdue"
+                    android:textColor="#FE0065"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/lblBillStatus1"
+                    android:layout_marginEnd="15dp"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/billsCardView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/billsCardView1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:cardCornerRadius="5dp"
+            android:elevation="15dp"
+            android:paddingBottom="20dp">
+
+            <RelativeLayout
+                android:id="@+id/layoutBills2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/lblBill2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jun Wei Chow"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblDate2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6 months contact"
+                    android:textColor="@color/colorBlack"
+                    android:layout_below="@+id/lblBill2"
+                    android:layout_marginStart="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblTime2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="60 days left"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#514DD9"/>
+
+                <TextView
+                    android:id="@+id/lblRentalPriceTitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rental Price:"
+                    android:layout_below="@+id/lblDate2"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblAmount2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RM 1400.00 / month"
+                    android:textColor="@color/colorBlack"
+                    android:layout_below="@+id/lblRentalPriceTitle2"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblBillStatus2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last Bill Status:"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_below="@+id/lblDate2"/>
+
+                <TextView
+                    android:id="@+id/lblStatus2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paid"
+                    android:textColor="#00CFBA"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/lblBillStatus2"
+                    android:layout_marginEnd="15dp"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/billsCardView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/billsCardView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:cardCornerRadius="5dp"
+            android:elevation="15dp"
+            android:paddingBottom="20dp">
+
+            <RelativeLayout
+                android:id="@+id/layoutBills3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/lblBill3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jaslyn Shu"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblDate3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5 months contact"
+                    android:textColor="@color/colorBlack"
+                    android:layout_below="@+id/lblBill3"
+                    android:layout_marginStart="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblTime3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ended"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#514DD9"/>
+
+                <TextView
+                    android:id="@+id/lblRentalPriceTitle3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rental Price:"
+                    android:layout_below="@+id/lblDate3"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblAmount3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RM 1200.00 / month"
+                    android:textColor="@color/colorBlack"
+                    android:layout_below="@+id/lblRentalPriceTitle3"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblBillStatus3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last Bill Status:"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_below="@+id/lblDate3"/>
+
+                <TextView
+                    android:id="@+id/lblStatus3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paid"
+                    android:textColor="#00CFBA"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/lblBillStatus3"
+                    android:layout_marginEnd="15dp"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--<androidx.cardview.widget.CardView
+            android:id="@+id/billsCardView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/billsCardView3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:cardCornerRadius="5dp"
+            android:elevation="15dp"
+            android:paddingBottom="20dp">
+
+            <RelativeLayout
+                android:id="@+id/layoutBills4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/lblBill4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Darren Chong"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblDate4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 years contact"
+                    android:textColor="@color/colorBlack"
+                    android:layout_below="@+id/lblBill4"
+                    android:layout_marginStart="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblTime4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="320 days left"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#514DD9"/>
+
+                <TextView
+                    android:id="@+id/lblRentalPriceTitle4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rental Price:"
+                    android:layout_below="@+id/lblDate4"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblAmount4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RM 1200.00 / month"
+                    android:textColor="@color/colorBlack"
+                    android:layout_below="@+id/lblRentalPriceTitle4"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblBillStatus4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last Bill Status:"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_below="@+id/lblDate4"/>
+
+                <TextView
+                    android:id="@+id/lblStatus4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Overdue"
+                    android:textColor="#FE0065"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/lblBillStatus4"
+                    android:layout_marginEnd="15dp"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

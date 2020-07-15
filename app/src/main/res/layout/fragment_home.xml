@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F5F7F9"
+    tools:context=".HomeFragment">
+
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/round_head"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_menu_white_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/lblDashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dashboard"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="50dp"/>
+
+        <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+            android:id="@+id/dot3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/view_pager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="5dp"
+            app:dotsColor="@color/colorYellow"
+            app:selectedDotColor="@color/colorYellow"
+            app:dotsStrokeColor="#A6A6A6"
+            app:dotsSize="10dp"
+            app:dotsSpacing="3dp"
+            app:progressMode="true"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/notesCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/dot3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:cardCornerRadius="5dp"
+            android:elevation="15dp"
+            android:paddingBottom="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/lblNotes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Notes"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="20sp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="15dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/layoutNotes1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblNotes"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:id="@+id/lblUsername1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Darren Chong"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold"
+                        android:layout_marginStart="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblTime1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="9.35 pm"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblMessage1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bro wifi not working"
+                        android:textColor="@color/colorBlack"
+                        android:layout_below="@+id/lblUsername1"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <TextView
+                        android:id="@+id/lblBadge1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:background="@drawable/rounded_badge_background_yellow"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/lblTime1"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="10dp"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/notesDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#DBDBDB"
+                    android:layout_below="@+id/layoutNotes1"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/layoutNotes2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/notesDivider">
+
+                    <TextView
+                        android:id="@+id/lblUsername2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chow Jun Wei"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/lblTime2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="9.45 pm"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblMessage2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No hot water aso lol"
+                        android:textColor="@color/colorBlack"
+                        android:layout_below="@+id/lblUsername2"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <TextView
+                        android:id="@+id/lblBadge2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:background="@drawable/rounded_badge_background_yellow"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/lblTime2"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="20dp"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/propertySummaryCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/notesCardView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:cardCornerRadius="5dp"
+            android:elevation="15dp"
+            android:layout_marginTop="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/lblPropertySummary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Property Summary"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="20sp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblTotalContact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Contact"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"
+                    android:layout_below="@+id/lblPropertySummary"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblTotalContactValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textColor="#514DD9"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/lblPropertySummary"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblActiveContact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Active Contact"
+                    android:textColor="@color/colorBlack"
+                    android:layout_below="@+id/lblTotalContact"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="3dp"/>
+
+                <TextView
+                    android:id="@+id/lblActiveContactValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textColor="@color/colorBlack"
+                    android:layout_below="@+id/lblTotalContactValue"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="3dp"/>
+
+                <TextView
+                    android:id="@+id/lblNextContact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Next contact ends in"
+                    android:textColor="@color/colorBlack"
+                    android:layout_below="@+id/lblActiveContact"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:id="@+id/lblNextContactValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="300 days."
+                    android:textStyle="bold"
+                    android:textColor="#514DD9"
+                    android:layout_below="@+id/lblActiveContact"
+                    android:layout_toEndOf="@+id/lblNextContact"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginStart="3dp"/>
+
+                <View
+                    android:id="@+id/summaryDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#DBDBDB"
+                    android:layout_below="@+id/lblNextContact"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblExpectedMoneyIncome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expected Money Income"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"
+                    android:layout_below="@+id/summaryDivider"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="15dp"/>
+
+                <TextView
+                    android:id="@+id/lblExpectedMoneyIncomeValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RM 3, 600.00"
+                    android:textStyle="bold"
+                    android:textColor="#514DD9"
+                    android:layout_below="@+id/summaryDivider"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"/>
+
+                <TextView
+                    android:id="@+id/lblReceived"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Received"
+                    android:textColor="@color/colorBlack"
+                    android:layout_below="@+id/lblExpectedMoneyIncome"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="3dp"/>
+
+                <TextView
+                    android:id="@+id/lblReceivedValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RM 3, 600.00"
+                    android:textColor="@color/colorBlack"
+                    android:layout_below="@+id/lblExpectedMoneyIncome"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="3dp"/>
+
+                <TextView
+                    android:id="@+id/lblOverdue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Overdue"
+                    android:textColor="@color/colorBlack"
+                    android:layout_below="@+id/lblReceived"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="3dp"/>
+
+                <TextView
+                    android:id="@+id/lblOverdueValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RM 0.00"
+                    android:textColor="#FE0065"
+                    android:layout_below="@+id/lblReceivedValue"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="20dp"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
