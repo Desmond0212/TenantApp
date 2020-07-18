@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F9"
+    tools:context=".TenantDetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/round_head"/>
+
+    <ImageButton
+        android:id="@+id/imgBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@android:color/transparent"
+        android:src="@drawable/baseline_keyboard_arrow_left_white_36"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"/>
+
+    <TextView
+        android:id="@+id/lblTenantDetailTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tenant Details"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorWhite"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="22dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/layoutTenantTitleCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/lblTenantDetailTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="5dp"
+        android:elevation="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgTenantTitleImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/undraw_sign_in_e6hj"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/lblTitleMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Agreement email has been sent to tenant. Share the link below if they didn't receive the email."
+                android:textSize="12sp"
+                android:textColor="#545454"
+                android:textAlignment="center"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="20dp"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutEditTextAndImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/txtEmailLink"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="https://xd.adobe.com/view/a8af19a4-0aa a..."
+                    android:background="@drawable/rounded_edit_text_background_light"
+                    android:textSize="12sp"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/layoutEditTextAndImage"
+                    app:layout_constraintEnd_toEndOf="@+id/layoutEditTextAndImage"
+                    app:layout_constraintTop_toTopOf="@+id/layoutEditTextAndImage"
+                    app:layout_constraintBottom_toBottomOf="@+id/layoutEditTextAndImage"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"/>
+
+                <LinearLayout
+                    android:id="@+id/layoutCopyButton"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    app:layout_constraintEnd_toEndOf="@+id/layoutEditTextAndImage"
+                    app:layout_constraintTop_toTopOf="@+id/layoutEditTextAndImage"
+                    app:layout_constraintBottom_toBottomOf="@+id/layoutEditTextAndImage"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/rounded_background_copy_button"
+                    android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/imgButtonCopy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_file_copy_24px"
+                    android:background="@android:color/transparent"/>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/layoutTenantDescCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/layoutTenantTitleCardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="5dp"
+        android:elevation="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/lblUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Darren Chong"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#212121"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/lblContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblUsername"
+                android:text="2 years contact"
+                android:textColor="#212121"
+                android:textSize="12sp"
+                android:layout_marginStart="15dp"/>
+
+            <TextView
+                android:id="@+id/lblStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="Pending Sign"
+                android:textColor="#514DD9"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutTenantOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblContact"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutLeft"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toTopOf="@+id/layoutTenantOne"
+                    app:layout_constraintBottom_toBottomOf="@+id/layoutTenantOne"
+                    app:layout_constraintEnd_toStartOf="@+id/layoutDivider">
+
+                    <TextView
+                        android:id="@+id/lblStartDateTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Start Date:"
+                        android:textColor="#9B9DAB"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginStart="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblStartDateValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="8 July 2020"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:textColor="#000000"
+                        android:layout_marginStart="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblEmailTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email:"
+                        android:textColor="#9B9DAB"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblEmailTitleValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="darren@gmail.com"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:textColor="#000000"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="15dp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/layoutDivider"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    app:layout_constraintEnd_toEndOf="@+id/layoutTenantOne"
+                    app:layout_constraintStart_toStartOf="@+id/layoutTenantOne"
+                    app:layout_constraintTop_toTopOf="@+id/layoutTenantOne"
+                    app:layout_constraintBottom_toBottomOf="@+id/layoutTenantOne"/>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toTopOf="@+id/layoutTenantOne"
+                    app:layout_constraintBottom_toBottomOf="@+id/layoutTenantOne"
+                    app:layout_constraintStart_toEndOf="@+id/layoutDivider">
+
+                    <TextView
+                        android:id="@+id/lblEndDateTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="End Date:"
+                        android:textColor="#9B9DAB"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginStart="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblEndDateValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="8 July 20200"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:textColor="#000000"
+                        android:layout_marginStart="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblPhoneNumberTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phone Number:"
+                        android:textColor="#9B9DAB"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblPhoneNumberValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+601655556756"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:textColor="#000000"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="15dp"/>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/layoutTenantOne"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <Button
+                    android:id="@+id/btnMailHim"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text="mail him"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/buttonViewDivider"
+                    android:background="@drawable/rounded_button_background_yellow_border"
+                    app:layout_constraintBottom_toBottomOf="@+id/layoutButtons"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <View
+                    android:id="@+id/buttonViewDivider"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <Button
+                    android:id="@+id/btnCallHim"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text="call him"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/buttonViewDivider"
+                    android:background="@drawable/rounded_button"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/viewDivider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9B9DAB"
+                app:layout_constraintTop_toBottomOf="@+id/layoutButtons"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutTenantTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewDivider2"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutLeft2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toTopOf="@+id/layoutTenantTwo"
+                    app:layout_constraintBottom_toBottomOf="@+id/layoutTenantTwo"
+                    app:layout_constraintEnd_toStartOf="@+id/layoutDivider3">
+
+                    <TextView
+                        android:id="@+id/lblRentalPriceTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rental Price"
+                        android:textColor="#9B9DAB"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginStart="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblRentalPriceValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RM 1, 200.00 / month"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:textColor="#000000"
+                        android:layout_marginStart="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblAfterPaymentDueTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Day after Payment Due"
+                        android:textColor="#9B9DAB"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblAfterPaymentDueValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5days"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:textColor="#000000"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblBillPeriodTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bill Period"
+                        android:textColor="#9B9DAB"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginStart="15dp" />
+
+                    <TextView
+                        android:id="@+id/lblBillPeriodValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Every 15th of the month"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:textColor="#000000"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblReceiveAccountTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payment Receive Account"
+                        android:textColor="#9B9DAB"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginStart="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblReceiveAccountValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Maybank"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:textColor="#000000"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="25dp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/layoutDivider3"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    app:layout_constraintEnd_toEndOf="@+id/layoutTenantTwo"
+                    app:layout_constraintStart_toStartOf="@+id/layoutTenantTwo"
+                    app:layout_constraintTop_toTopOf="@+id/layoutTenantTwo"
+                    app:layout_constraintBottom_toBottomOf="@+id/layoutTenantTwo"/>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutRight2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toTopOf="@+id/layoutTenantTwo"
+                    app:layout_constraintBottom_toBottomOf="@+id/layoutTenantTwo"
+                    app:layout_constraintStart_toEndOf="@+id/layoutDivider3">
+
+                    <TextView
+                        android:id="@+id/lblContractAmountTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Contract Amount:"
+                        android:textColor="#9B9DAB"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginStart="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblContractAmountTitleValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RM 14, 400.00"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:textColor="#000000"
+                        android:layout_marginStart="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblLateChargesTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Late Charges:"
+                        android:textColor="#9B9DAB"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblLateChangesValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RM 500.00"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:textColor="#000000"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="15dp"/>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

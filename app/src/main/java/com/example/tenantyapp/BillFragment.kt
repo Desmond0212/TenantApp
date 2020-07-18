@@ -39,7 +39,7 @@ class BillFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_bill, container, false)
 
-        val adapter = ViewPagerAdapterBills(childFragmentManager!!)
+        val adapter = ViewPagerAdapterBills(childFragmentManager)
         adapter.addFragment(BilllsTopbarFragment(), "FragmentBills1")
         adapter.addFragment(BilllsTopbarFragment(), "FragmentBills2")
         view.view_pager_bills?.adapter = adapter

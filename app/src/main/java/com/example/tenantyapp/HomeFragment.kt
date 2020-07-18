@@ -9,9 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
-import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
-import kotlinx.android.synthetic.main.fragment_home_topbar.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -51,9 +49,12 @@ class HomeFragment : Fragment() {
 
         viewPager = view.findViewById(R.id.view_pager)
 
-        val adapter = ViewPagerAdapter(childFragmentManager!!)
-        adapter.addFragment(HomeTopbarFragment())
-        adapter.addFragment(HomeTopbarFragment())
+        val adapter = ViewPagerAdapter(childFragmentManager)
+        adapter.addFragment(HomeTopbarFragment(), "A-13-14")
+        HomeTopbarFragment.newInstance("A-20-23", "")
+        adapter.addFragment(HomeTopbarFragment(), "B-25-18")
+        HomeTopbarFragment.newInstance("B-25-18", "")
+
         view.view_pager?.adapter = adapter
         view.dot3?.setViewPager(view.view_pager)
 
@@ -76,12 +77,14 @@ class HomeFragment : Fragment() {
                     view.notesDivider.visibility = View.GONE
                     //HomeTopbarFragment.newInstance("A-20-23", "")
                     //lblUnitTitle.text = "A-20-23"
+                    HomeTopbarFragment.newInstance("A-20-23", "A-10-13")
                 }
                 else
                 {
                     view.layoutNotes2.visibility = View.VISIBLE
                     view.notesDivider.visibility = View.VISIBLE
                     //lblUnitTitle.text = "A-13-14"
+                    HomeTopbarFragment.newInstance("A-33-89", "A-10-13")
                 }
             }
         })
@@ -114,10 +117,10 @@ class HomeFragment : Fragment() {
         val fragments: MutableList<Fragment> = ArrayList()
         val titles: MutableList<String> = ArrayList()
 
-        fun addFragment(fragment: Fragment/*, title:String*/)
+        fun addFragment(fragment: Fragment, title:String)
         {
             fragments.add(fragment)
-            //titles.add(title)
+            titles.add(title)
         }
 
         override fun getItem(p0: Int): Fragment = fragments[p0]

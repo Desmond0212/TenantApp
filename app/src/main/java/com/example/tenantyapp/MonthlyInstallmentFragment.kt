@@ -1,10 +1,12 @@
 package com.example.tenantyapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
@@ -23,12 +25,17 @@ private const val ARG_PARAM2 = "param2"
  * Use the [MonthlyInstallmentFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class MonthlyInstallmentFragment : Fragment() {
+class MonthlyInstallmentFragment : Fragment()
+{
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var cardViewOne: CardView? = null
+    private var cardViewTwo: CardView? = null
+    private var cardViewThree: CardView? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
@@ -41,11 +48,75 @@ class MonthlyInstallmentFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_monthly_installment, container, false)
 
-        val adapter = ViewPagerAdapterTenants(childFragmentManager!!)
+        val adapter = ViewPagerAdapterTenants(childFragmentManager)
         adapter.addFragment(TenantsTopbarFragment(), "FragmentTenants1")
         adapter.addFragment(TenantsTopbarFragment(), "FragmentTenants2")
         view.view_pager_tenants?.adapter = adapter
         view.dot3_tenants?.setViewPager(view.view_pager_tenants)
+
+        cardViewOne = view.findViewById(R.id.billsCardView1)
+        cardViewTwo = view.findViewById(R.id.billsCardView2)
+        cardViewThree = view.findViewById(R.id.billsCardView3)
+
+        cardViewOne?.setOnClickListener {
+            val intent = Intent(activity, TenantDetailActivity::class.java)
+            intent.putExtra("Username", "Darren Chong")
+            intent.putExtra("ContactDate", "2 years contact")
+            intent.putExtra("DayLeft", "320 days left")
+            intent.putExtra("RentalPrice", "RM 1200.00 / month")
+            intent.putExtra("BillsStatus", "Overdue")
+            intent.putExtra("StartDate", "27 July 2018")
+            intent.putExtra("EndDate", "28 July 2020")
+            intent.putExtra("Email", "Darren@gmail.com")
+            intent.putExtra("PhoneNumber", "+6018 2233987")
+            intent.putExtra("TotalContactAmount", "RM 28,800.00")
+            intent.putExtra("PaymentDue", "5 days")
+            intent.putExtra("LateCharges", "RM 500.00")
+            intent.putExtra("BillsPeriod", "Every 27th of the month")
+            intent.putExtra("AccountReceive", "Maybank")
+
+            startActivity(intent)
+        }
+
+        cardViewTwo?.setOnClickListener {
+            val intent = Intent(activity, TenantDetailActivity::class.java)
+            intent.putExtra("Username", "Jun Wei Chow")
+            intent.putExtra("ContactDate", "3 months contact")
+            intent.putExtra("DayLeft", "60 days left")
+            intent.putExtra("RentalPrice", "RM 1500.00 / month")
+            intent.putExtra("BillsStatus", "Paid")
+            intent.putExtra("StartDate", "05 May 2020")
+            intent.putExtra("EndDate", "06 August 2020")
+            intent.putExtra("Email", "JunWei@gmail.com")
+            intent.putExtra("PhoneNumber", "+6017 1212546")
+            intent.putExtra("TotalContactAmount", "RM 4,500.00")
+            intent.putExtra("PaymentDue", "2 days")
+            intent.putExtra("LateCharges", "RM 500.00")
+            intent.putExtra("BillsPeriod", "Every 5th of the month")
+            intent.putExtra("AccountReceive", "Hong Leong Bank")
+
+            startActivity(intent)
+        }
+
+        cardViewThree?.setOnClickListener {
+            val intent = Intent(activity, TenantDetailActivity::class.java)
+            intent.putExtra("Username", "Jaslyn Shu")
+            intent.putExtra("ContactDate", "5 months contact")
+            intent.putExtra("DayLeft", "Ended")
+            intent.putExtra("RentalPrice", "RM 1200.00 / month")
+            intent.putExtra("BillsStatus", "Paid")
+            intent.putExtra("StartDate", "12 March 2020")
+            intent.putExtra("EndDate", "13 August 2020")
+            intent.putExtra("Email", "Jaslyn@gmail.com")
+            intent.putExtra("PhoneNumber", "+6017 3455432")
+            intent.putExtra("TotalContactAmount", "RM 6,000.00")
+            intent.putExtra("PaymentDue", "10 days")
+            intent.putExtra("LateCharges", "RM 500.00")
+            intent.putExtra("BillsPeriod", "Every 12th of the month")
+            intent.putExtra("AccountReceive", "Public Bank")
+
+            startActivity(intent)
+        }
 
         view.view_pager_tenants.setOnPageChangeListener(object: ViewPager.OnPageChangeListener
         {
