@@ -1,9 +1,11 @@
 package com.example.tenantyapp
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_new_home.*
 
@@ -27,7 +29,11 @@ class NewHomeActivity : AppCompatActivity()
         }
 
         btnSaveHome.setOnClickListener {
-            finish()
+            //finish()
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
+            Toast.makeText(this, "New Home Saved...", Toast.LENGTH_SHORT).show()
         }
     }
 }

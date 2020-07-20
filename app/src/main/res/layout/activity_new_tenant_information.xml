@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewTenantInformationActivity"
+    android:background="#F5F7F9"
+    android:id="@+id/layoutNewTenantInformation">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutTopBarNewTenantInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#03081C"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnCloseNewTenantInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_clear_white_24"
+            android:background="@android:color/transparent"
+            app:layout_constraintStart_toStartOf="@+id/layoutTopBarNewTenantInfo"
+            app:layout_constraintTop_toTopOf="@+id/layoutTopBarNewTenantInfo"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/lblCreateNewTenantTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create New Tenant"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:textColor="@color/colorYellow"
+            app:layout_constraintStart_toStartOf="@+id/layoutTopBarNewTenantInfo"
+            app:layout_constraintTop_toBottomOf="@+id/btnCloseNewTenantInfo"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:id="@+id/lblNewTanentDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tenant information is required to build a contract agreement between you and them."
+            android:textColor="@color/colorWhite"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/layoutTopBarNewTenantInfo"
+            app:layout_constraintTop_toBottomOf="@+id/lblCreateNewTenantTitle"
+            app:layout_constraintEnd_toEndOf="@+id/layoutTopBarNewTenantInfo"
+            app:layout_constraintBottom_toBottomOf="@id/layoutTopBarNewTenantInfo"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/lblTenantInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tenant Information"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/layoutTopBarNewTenantInfo"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"/>
+
+    <EditText
+        android:id="@+id/txtFullNameNewTenantInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/lblTenantInfo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Full Name"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:paddingBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/txtEmailNewTenantInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txtFullNameNewTenantInfo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Email"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:paddingBottom="20dp"/>
+
+    <LinearLayout
+        android:id="@+id/layoutEditTextNewTenant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmailNewTenantInfo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/txtPhoneNewTenant"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Phone Number"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="5dp"
+            android:paddingBottom="20dp"/>
+
+        <EditText
+            android:id="@+id/txtNumOfOccupant"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Number of Occupant"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="20dp"
+            android:paddingBottom="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <View
+            android:id="@+id/layoutLeft"
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_weight="1"
+            android:background="@color/colorYellow"
+            android:layout_marginStart="20dp"/>
+
+        <View
+            android:id="@+id/layoutMiddle"
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_weight="1"
+            android:background="@color/colorYellow"/>
+
+        <View
+            android:id="@+id/layoutEnd"
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_weight="1"
+            android:background="#BDBDBD"
+            android:layout_marginEnd="20dp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnBackNewTenantInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/layoutProgressBar"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"/>
+
+    <Button
+        android:id="@+id/btnNextNewTenantInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:background="@drawable/rounded_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/layoutProgressBar"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

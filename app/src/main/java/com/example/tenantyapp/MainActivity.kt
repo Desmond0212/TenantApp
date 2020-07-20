@@ -2,23 +2,25 @@ package com.example.tenantyapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
 import android.view.Window
 import android.view.WindowManager
-import android.widget.Switch
-import android.widget.Toast
+import android.widget.Button
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.viewpager.widget.ViewPager
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.luseen.spacenavigation.SpaceItem
 import com.luseen.spacenavigation.SpaceNavigationView
 import com.luseen.spacenavigation.SpaceOnClickListener
-import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
-import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity()
 {
     private var spaceNavigationView: SpaceNavigationView? = null
+    private var btnBottomNewHome: Button? = null
+    private var btnBottomNewTenant: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -54,13 +56,30 @@ class MainActivity : AppCompatActivity()
         spaceNavigationView?.addSpaceItem(SpaceItem("", R.drawable.icon_third_tab))
         spaceNavigationView?.addSpaceItem(SpaceItem("", R.drawable.icon_profile_tab))
 
-        spaceNavigationView?.setSpaceOnClickListener(object : SpaceOnClickListener {
-            override fun onCentreButtonClick() {
-                //Toast.makeText(this@MainActivity, "onCentreButtonClick", Toast.LENGTH_SHORT).show()
+        spaceNavigationView?.setSpaceOnClickListener(object : SpaceOnClickListener
+        {
+            override fun onCentreButtonClick()
+            {
                 spaceNavigationView?.setCentreButtonSelectable(true)
 
-                val intent = Intent(this@MainActivity, NewHomeActivity::class.java)
-                startActivity(intent)
+                val bottomSheetDialog = BottomSheetDialog(this@MainActivity, R.style.BottomSheetDialogTheme)
+                val bottomSheetView = LayoutInflater.from(applicationContext).inflate(R.layout.layout_bottom_sheet, findViewById<View>(R.id.bottomSheetContainer) as? LinearLayout)
+
+                btnBottomNewHome = bottomSheetView.findViewById(R.id.btnNewHome)
+                btnBottomNewTenant = bottomSheetView.findViewById(R.id.btnNewTenant)
+
+                btnBottomNewHome?.setOnClickListener {
+                    val intent = Intent(this@MainActivity, NewHomeActivity::class.java)
+                    startActivity(intent)
+                }
+
+                btnBottomNewTenant?.setOnClickListener {
+                    val intent = Intent(this@MainActivity, NewTenantActivity::class.java)
+                    startActivity(intent)
+                }
+
+                bottomSheetDialog.setContentView(bottomSheetView)
+                bottomSheetDialog.show()
 
                 /*val routeFrag = supportFragmentManager.beginTransaction()
                 routeFrag.replace(R.id.fragment_container, NewHomeFragment())

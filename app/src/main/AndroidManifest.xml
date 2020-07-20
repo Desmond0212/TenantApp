@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TenantDetailActivity"></activity>
+        <activity android:name=".NewTenantCreatingActivity"></activity>
+        <activity android:name=".NewTenantRentalInfoActivity" />
+        <activity android:name=".NewTenantInformationActivity" />
+        <activity android:name=".NewTenantActivity" />
+        <activity android:name=".TenantDetailActivity" />
         <activity android:name=".NewHomeActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity">
