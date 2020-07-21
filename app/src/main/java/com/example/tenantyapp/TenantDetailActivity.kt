@@ -1,7 +1,9 @@
 package com.example.tenantyapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Toast
@@ -36,6 +38,11 @@ class TenantDetailActivity : AppCompatActivity()
         layoutCopyButton.setOnClickListener {
             Toast.makeText(this, "Link Copied...", Toast.LENGTH_SHORT).show()
         }
+
+        btnDoneTenantDetail.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun getExtraString()
@@ -54,6 +61,8 @@ class TenantDetailActivity : AppCompatActivity()
         val lateCharges: String? = intent.getStringExtra("LateCharges")
         val billsPeriod: String? = intent.getStringExtra("BillsPeriod")
         val accountReceive: String? = intent.getStringExtra("AccountReceive")
+        val isFromNewTenant: Boolean? = intent.getBooleanExtra("isFromNewTenant", false)
+        val accountNumber: String? = intent.getStringExtra("BankAccountNumber")
 
         lblUsername.text = username
         lblContact.text = contactDate
@@ -67,5 +76,17 @@ class TenantDetailActivity : AppCompatActivity()
         lblReceiveAccountValue.text = accountReceive
         lblContractAmountTitleValue.text = totalContactAmount
         lblLateChangesValue.text = lateCharges
+        lblBankAccountValue.text = accountNumber
+
+        if (isFromNewTenant!!)
+        {
+            btnDoneTenantDetail.visibility = View.VISIBLE
+            imgBackButton.visibility = View.GONE
+        }
+        else
+        {
+            btnDoneTenantDetail.visibility = View.GONE
+            imgBackButton.visibility = View.VISIBLE
+        }
     }
 }

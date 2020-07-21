@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
+import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -73,16 +74,26 @@ class HomeFragment : Fragment() {
             override fun onPageSelected(position: Int) {
                 if (position == 1)
                 {
-                    view.layoutNotes2.visibility = View.GONE
-                    view.notesDivider.visibility = View.GONE
+                    notesCardView.visibility = View.VISIBLE
+                    propertySummaryCardView.visibility = View.VISIBLE
+                    lblMessage.visibility = View.GONE
+                    messageCardView.visibility = View.GONE
+                    lblBillMonth.visibility = View.GONE
+                    btnViewAll.visibility = View.GONE
+                    billingCardView.visibility = View.GONE
                     //HomeTopbarFragment.newInstance("A-20-23", "")
                     //lblUnitTitle.text = "A-20-23"
                     HomeTopbarFragment.newInstance("A-20-23", "A-10-13")
                 }
                 else
                 {
-                    view.layoutNotes2.visibility = View.VISIBLE
-                    view.notesDivider.visibility = View.VISIBLE
+                    notesCardView.visibility = View.GONE
+                    propertySummaryCardView.visibility = View.GONE
+                    lblMessage.visibility = View.VISIBLE
+                    messageCardView.visibility = View.VISIBLE
+                    lblBillMonth.visibility = View.VISIBLE
+                    btnViewAll.visibility = View.VISIBLE
+                    billingCardView.visibility = View.VISIBLE
                     //lblUnitTitle.text = "A-13-14"
                     HomeTopbarFragment.newInstance("A-33-89", "A-10-13")
                 }

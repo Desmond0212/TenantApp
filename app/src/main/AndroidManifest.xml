@@ -4,19 +4,20 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/undraw_cabin_hkfr"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/undraw_cabin_hkfr"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NewTenantCreatingActivity"></activity>
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".NewTenantCreatingActivity" />
         <activity android:name=".NewTenantRentalInfoActivity" />
         <activity android:name=".NewTenantInformationActivity" />
         <activity android:name=".NewTenantActivity" />
         <activity android:name=".TenantDetailActivity" />
         <activity android:name=".NewHomeActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

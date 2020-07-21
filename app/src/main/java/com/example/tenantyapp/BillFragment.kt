@@ -1,16 +1,18 @@
 package com.example.tenantyapp
 
+import android.annotation.SuppressLint
+import android.app.Activity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
+import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import kotlinx.android.synthetic.main.fragment_bill.view.*
-import kotlinx.android.synthetic.main.fragment_home.view.*
-import kotlinx.android.synthetic.main.fragment_home_topbar.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,6 +37,7 @@ class BillFragment : Fragment() {
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_bill, container, false)
@@ -69,7 +72,27 @@ class BillFragment : Fragment() {
 
         })
 
+        view.fragmentBillLayout.setOnTouchListener { _, _ ->
+            hideSoftKeyboard(activity)
+            false
+        }
+
+        view.layoutConstraintContainer.setOnTouchListener { _, _ ->
+            hideSoftKeyboard(activity)
+            false
+        }
+
         return view
+    }
+
+    private fun hideSoftKeyboard(activity: FragmentActivity?)
+    {
+        val inputMethodManager: InputMethodManager = activity?.getSystemService(
+            Activity.INPUT_METHOD_SERVICE
+        ) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(
+            activity.currentFocus?.windowToken, 0
+        )
     }
 
     inner class ViewPagerAdapterBills(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager)

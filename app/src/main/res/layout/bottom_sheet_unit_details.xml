@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/bottomSheetContainerUnitDetails">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_keyboard_arrow_down_white_48"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="5dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_sheet_background">
+
+        <EditText
+            android:id="@+id/lblUnitNumUnitDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Unit Number"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:inputType="text"
+            android:background="@drawable/rounded_button_background_yellow_border"
+            android:padding="15dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="40dp"/>
+
+        <EditText
+            android:id="@+id/lblUnitAddressUnitDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Unit Address"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblUnitNumUnitDetails"
+            android:background="@drawable/rounded_button_background_yellow_border"
+            android:padding="15dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="20dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerUnitStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblUnitAddressUnitDetails"
+            android:background="@drawable/rounded_button_background_yellow_border"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="15dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="20dp"/>
+
+       <LinearLayout
+           android:id="@+id/layoutButtons"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/spinnerUnitStatus"
+           android:layout_marginTop="50dp"
+           android:orientation="horizontal"
+           android:layout_marginBottom="50dp">
+
+           <Button
+               android:id="@+id/btnDeleteUnit"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:text="Delete"
+               android:textColor="@color/colorWhite"
+               android:textAllCaps="false"
+               android:background="@drawable/rounded_background_button_red_border"
+               android:layout_marginStart="30dp"
+               android:layout_marginEnd="15dp"
+               android:layout_marginBottom="30dp"/>
+
+           <Button
+               android:id="@+id/btnDSaveUnit"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:text="Save"
+               android:textColor="@color/colorBlack"
+               android:textAllCaps="false"
+               android:background="@drawable/rounded_button"
+               android:layout_marginStart="15dp"
+               android:layout_marginEnd="30dp"/>
+
+       </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

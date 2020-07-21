@@ -74,6 +74,7 @@ class MonthlyInstallmentFragment : Fragment()
             intent.putExtra("LateCharges", "RM 500.00")
             intent.putExtra("BillsPeriod", "Every 27th of the month")
             intent.putExtra("AccountReceive", "Maybank")
+            intent.putExtra("BankAccountNumber", "98765434567 - Darren Chong")
 
             startActivity(intent)
         }
@@ -94,6 +95,7 @@ class MonthlyInstallmentFragment : Fragment()
             intent.putExtra("LateCharges", "RM 500.00")
             intent.putExtra("BillsPeriod", "Every 5th of the month")
             intent.putExtra("AccountReceive", "Hong Leong Bank")
+            intent.putExtra("BankAccountNumber", "23456798765 - Chow Jun Wei")
 
             startActivity(intent)
         }
@@ -114,6 +116,7 @@ class MonthlyInstallmentFragment : Fragment()
             intent.putExtra("LateCharges", "RM 500.00")
             intent.putExtra("BillsPeriod", "Every 12th of the month")
             intent.putExtra("AccountReceive", "Public Bank")
+            intent.putExtra("BankAccountNumber", "987654342323 - Jaslyn Shu")
 
             startActivity(intent)
         }

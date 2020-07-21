@@ -95,6 +95,7 @@
         android:text="A-13-14 Pelangi Indah Condo, Batu 4 1/2 Jalan Ipoh, 51200 Kuala Lumpur"
         android:textStyle="bold"
         android:textSize="14sp"
+        android:editable="false"
         android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"

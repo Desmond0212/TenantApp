@@ -20,6 +20,7 @@ class NewTenantActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
 {
     private var spinner : Spinner? = null
     private var units = arrayOf("A-13-14", "A-20-22", "B-10-29")
+    private var selectedUnit: String? = null
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?)
@@ -56,6 +57,8 @@ class NewTenantActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
 
         btnNextNewTenantOne.setOnClickListener {
             val intent = Intent(this, NewTenantInformationActivity::class.java)
+            intent.putExtra("SelectedUnit", selectedUnit)
+            intent.putExtra("UnitAddress", txtUnitAddress.text.toString())
             startActivity(intent)
         }
     }
@@ -63,6 +66,25 @@ class NewTenantActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
     override fun onItemSelected(arg0: AdapterView<*>, arg1: View, position: Int, id: Long) {
         //textView_msg!!.text = "Selected : "+languages[position]
         Toast.makeText(this, "Unit Selected: " + units[position], Toast.LENGTH_SHORT).show()
+        selectedUnit = units[position]
+
+        when (position)
+        {
+            0 ->
+            {
+                txtUnitAddress.setText("A-13-14 Pelangi Indah Condo, Batu 4 1/2 Jalan Ipoh, 51200 Kuala Lumpur")
+            }
+
+            1 ->
+            {
+                txtUnitAddress.setText("A-20-22 Pelangi Indah Condo, Batu 4 1/2 Jalan Ipoh, 51200 Kuala Lumpur")
+            }
+
+            2 ->
+            {
+                txtUnitAddress.setText("B-10-29 Botani Indah Condo, Simpang 34 Jalan Kuching, 52200 Kuala Lumpur")
+            }
+        }
     }
 
     override fun onNothingSelected(arg0: AdapterView<*>) {}

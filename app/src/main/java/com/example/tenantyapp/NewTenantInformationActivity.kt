@@ -8,11 +8,15 @@ import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_new_tenant_information.*
 
 class NewTenantInformationActivity : AppCompatActivity()
 {
+    private var selectedUnit: String? = null
+    private var unitAddress: String? = null
+
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -26,6 +30,8 @@ class NewTenantInformationActivity : AppCompatActivity()
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         // finally change the color
         window.statusBarColor = ContextCompat.getColor(this, R.color.colorBackground)
+
+        getExtraStringValue()
 
         layoutNewTenantInformation.setOnTouchListener { _, _ ->
             hideSoftKeyboard(this)
@@ -47,9 +53,31 @@ class NewTenantInformationActivity : AppCompatActivity()
         }
 
         btnNextNewTenantInfo.setOnClickListener {
-            val intent = Intent(this, NewTenantRentalInfoActivity::class.java)
-            startActivity(intent)
+            if (txtFullNameNewTenantInfo.text != null && txtFullNameNewTenantInfo.text.toString() != "" &&
+                txtEmailNewTenantInfo.text != null && txtEmailNewTenantInfo.text.toString() != "" &&
+                txtPhoneNewTenant.text != null && txtPhoneNewTenant.text.toString() != "" &&
+                txtNumOfOccupant.text != null && txtPhoneNewTenant.text.toString() != "")
+            {
+                val intent = Intent(this, NewTenantRentalInfoActivity::class.java)
+                intent.putExtra("SelectedUnit", selectedUnit)
+                intent.putExtra("UnitAddress", unitAddress)
+                intent.putExtra("FullName", txtFullNameNewTenantInfo.text.toString())
+                intent.putExtra("EmailAddress", txtEmailNewTenantInfo.text.toString())
+                intent.putExtra("PhoneNumber", txtPhoneNewTenant.text.toString())
+                intent.putExtra("NumberOfOccupant", txtNumOfOccupant.text.toString())
+                startActivity(intent)
+            }
+            else
+            {
+                Toast.makeText(this, "Please complete the form before proceed.", Toast.LENGTH_SHORT).show()
+            }
         }
+    }
+
+    private fun getExtraStringValue()
+    {
+        selectedUnit = intent.getStringExtra("SelectedUnit")
+        unitAddress = intent.getStringExtra("UnitAddress")
     }
 
     private fun hideSoftKeyboard(activity: Activity)

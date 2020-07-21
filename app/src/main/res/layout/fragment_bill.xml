@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F7F9"
+    android:id="@+id/fragmentBillLayout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".BillFragment">
 
@@ -19,6 +20,7 @@
         android:src="@drawable/round_head"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutConstraintContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
