@@ -38,7 +38,7 @@
             android:id="@+id/lblDashboard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Account"
+            android:text="Billing"
             android:textStyle="bold"
             android:textColor="@color/colorWhite"
             android:textSize="20sp"

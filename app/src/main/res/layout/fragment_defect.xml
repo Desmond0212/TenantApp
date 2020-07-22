@@ -3,6 +3,532 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".DefectFragment">
+
+    <ImageView
+        android:id="@+id/imgBackgroundDefect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/round_head"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutConstraintContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_menu_white_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/lblDashboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Defects"
+        android:textStyle="bold"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <ImageView
+        android:id="@+id/imgNotificationDefects"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_notifications_white_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="7dp"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager_defects"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"/>
+
+    <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+        android:id="@+id/dot3_defects"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/view_pager_defects"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="5dp"
+        app:dotsColor="@color/colorYellow"
+        app:selectedDotColor="@color/colorYellow"
+        app:dotsStrokeColor="#A6A6A6"
+        app:dotsSize="10dp"
+        app:dotsSpacing="3dp"
+        app:progressMode="true"/>
+
+    <EditText
+        android:id="@+id/txtSearchBill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search here..."
+        android:textSize="14sp"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:background="@drawable/rounded_edit_text_background"
+        android:drawableStart="@drawable/baseline_search_white_24"
+        android:drawablePadding="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/dot3_defects"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:padding="10dp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSearchBill"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="230dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewDefectMessage1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/txtSearchBill"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:elevation="10dp"
+                    app:cardCornerRadius="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/lblMessageTitle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Wifi is not working."
+                            android:textStyle="bold"
+                            android:textColor="@color/colorBlack"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="20dp"/>
+
+                        <TextView
+                            android:id="@+id/lblUsernameAndDate1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Darren Chong | July 20 2020"
+                            android:layout_below="@+id/lblMessageTitle1"
+                            android:layout_marginStart="15dp"/>
+
+                        <TextView
+                            android:id="@+id/lblDefectStatus1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Open"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorYellow"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginTop="20dp"/>
+
+                        <ImageView
+                            android:id="@+id/imgDefectImage1"
+                            android:layout_width="70dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/defect_image1"
+                            android:layout_below="@+id/lblUsernameAndDate1"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="10dp"/>
+
+                        <ImageView
+                            android:id="@+id/imgDefectImage2"
+                            android:layout_width="70dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/defect_image2"
+                            android:layout_below="@+id/lblUsernameAndDate1"
+                            android:layout_toEndOf="@+id/imgDefectImage1"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblUsernameAndDate1"
+                            android:layout_toEndOf="@+id/imgDefectImage2"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp">
+
+                            <ImageView
+                                android:id="@+id/imgDefectImage3"
+                                android:layout_width="70dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/defect_image3"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"/>
+
+                            <ImageView
+                                android:id="@+id/imgPlayIcon1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:src="@drawable/baseline_play_circle_filled_black_24"
+                                app:layout_constraintTop_toTopOf="@+id/imgDefectImage3"
+                                app:layout_constraintStart_toStartOf="@+id/imgDefectImage3"
+                                app:layout_constraintEnd_toEndOf="@+id/imgDefectImage3"
+                                app:layout_constraintBottom_toBottomOf="@+id/imgDefectImage3"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewDefectMessage2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/cardViewDefectMessage1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:elevation="10dp"
+                    app:cardCornerRadius="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/lblMessageTitle2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cracks on the walls!!!"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorBlack"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="20dp"/>
+
+                        <TextView
+                            android:id="@+id/lblUsernameAndDate2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Jaslyn Shu | May 16 2020"
+                            android:layout_below="@+id/lblMessageTitle2"
+                            android:layout_marginStart="15dp"/>
+
+                        <TextView
+                            android:id="@+id/lblDefectStatus2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Resolved"
+                            android:textStyle="bold"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginTop="20dp"/>
+
+                        <ImageView
+                            android:id="@+id/imgDefectImage4"
+                            android:layout_width="70dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/defect_image6"
+                            android:layout_below="@+id/lblUsernameAndDate2"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="10dp"/>
+
+                        <ImageView
+                            android:id="@+id/imgDefectImage5"
+                            android:layout_width="70dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/defect_image5"
+                            android:layout_below="@+id/lblUsernameAndDate2"
+                            android:layout_toEndOf="@+id/imgDefectImage4"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblUsernameAndDate2"
+                            android:layout_toEndOf="@+id/imgDefectImage5"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp">
+
+                            <ImageView
+                                android:id="@+id/imgDefectImage6"
+                                android:layout_width="70dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/defect_image4"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:contentDescription="@null"/>
+
+                            <View
+                                android:layout_width="70dp"
+                                android:layout_height="60dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:background="#424242"
+                                android:alpha="0.8"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+3"
+                                android:textColor="@color/colorWhite"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewDefectMessage3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/cardViewDefectMessage2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:elevation="10dp"
+                    app:cardCornerRadius="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/lblMessageTitle3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Toilet lid broken."
+                            android:textStyle="bold"
+                            android:textColor="@color/colorBlack"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="20dp"/>
+
+                        <TextView
+                            android:id="@+id/lblUsernameAndDate3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Jun Wei | April 06 2020"
+                            android:layout_below="@+id/lblMessageTitle3"
+                            android:layout_marginStart="15dp"/>
+
+                        <TextView
+                            android:id="@+id/lblDefectStatus3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Resolved"
+                            android:textStyle="bold"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginTop="20dp"/>
+
+
+                        <ImageView
+                            android:id="@+id/imgDefectImage8"
+                            android:layout_width="70dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/defect_image7"
+                            android:layout_below="@+id/lblUsernameAndDate3"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="10dp"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblUsernameAndDate3"
+                            android:layout_toEndOf="@+id/imgDefectImage8"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp">
+
+                            <ImageView
+                                android:id="@+id/imgDefectImage9"
+                                android:layout_width="70dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/defect_image8"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"/>
+
+                            <ImageView
+                                android:id="@+id/imgPlayIcon3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:src="@drawable/baseline_play_circle_filled_black_24"
+                                app:layout_constraintTop_toTopOf="@+id/imgDefectImage9"
+                                app:layout_constraintStart_toStartOf="@+id/imgDefectImage9"
+                                app:layout_constraintEnd_toEndOf="@+id/imgDefectImage9"
+                                app:layout_constraintBottom_toBottomOf="@+id/imgDefectImage9"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewDefectMessage4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/cardViewDefectMessage1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="100dp"
+                    android:elevation="10dp"
+                    app:cardCornerRadius="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/lblMessageTitle4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Shower Screen and toilet lid broken"
+                            android:lines="2"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorBlack"
+                            android:layout_toStartOf="@+id/lblDefectStatus4"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="40dp"/>
+
+                        <TextView
+                            android:id="@+id/lblUsernameAndDate4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Vinny Chong | April 02 2020"
+                            android:layout_below="@+id/lblMessageTitle4"
+                            android:layout_marginStart="15dp"/>
+
+                        <TextView
+                            android:id="@+id/lblDefectStatus4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Resolved"
+                            android:textStyle="bold"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginTop="20dp"/>
+
+                        <ImageView
+                            android:id="@+id/imgDefectImage10"
+                            android:layout_width="70dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/defect_image9"
+                            android:layout_below="@+id/lblUsernameAndDate4"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="10dp"/>
+
+                        <ImageView
+                            android:id="@+id/imgDefectImage11"
+                            android:layout_width="70dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/defect_image11"
+                            android:layout_below="@+id/lblUsernameAndDate4"
+                            android:layout_toEndOf="@+id/imgDefectImage10"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblUsernameAndDate4"
+                            android:layout_toEndOf="@+id/imgDefectImage11"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp">
+
+                            <ImageView
+                                android:id="@+id/imgDefectImage12"
+                                android:layout_width="70dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/defect_image10"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:contentDescription="@null"/>
+
+                            <View
+                                android:layout_width="70dp"
+                                android:layout_height="60dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:background="#424242"
+                                android:alpha="0.8"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+5"
+                                android:textColor="@color/colorWhite"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
