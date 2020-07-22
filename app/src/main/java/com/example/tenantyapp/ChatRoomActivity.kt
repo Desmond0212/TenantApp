@@ -20,6 +20,8 @@ import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_chat_room.*
 import kotlinx.android.synthetic.main.message_row_receiver.view.*
 import kotlinx.android.synthetic.main.message_row_sender.view.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ChatRoomActivity : AppCompatActivity()
 {
@@ -112,9 +114,12 @@ class ChatRoomActivity : AppCompatActivity()
         val user = intent.getParcelableExtra<UserVO>(NewMessageActivity.USER_KEY)
         val fromId = FirebaseAuth.getInstance().uid
         val toId = user.uid
-        val timestamp = System.currentTimeMillis() / 1000
+        val timestamp = System.currentTimeMillis()
 
         Log.d("Desmond Debug:", toId)
+        val formatter = SimpleDateFormat("hh:mm aa", Locale.ENGLISH)
+        val formatted = formatter.format(timestamp)
+        Log.d("Desmond Debug TimeStamp: ", formatted)
 
         if (fromId == null) return
 

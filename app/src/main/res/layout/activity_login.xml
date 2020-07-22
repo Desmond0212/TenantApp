@@ -221,7 +221,8 @@
         android:layout_height="match_parent"
         android:background="#424242"
         android:alpha="0.9"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:layout_marginTop="-50dp">
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/animLoginLoading"

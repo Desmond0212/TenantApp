@@ -1,7 +1,5 @@
 package com.example.tenantyapp
 
-import com.xwray.groupie.Item
-import com.xwray.groupie.ViewHolder
 import com.example.tenantyapp.model.MessageVO
 import com.example.tenantyapp.model.UserVO
 import com.google.firebase.auth.FirebaseAuth
@@ -9,7 +7,12 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.squareup.picasso.Picasso
+import com.xwray.groupie.Item
+import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.user_row_latest_message.view.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class LatestMessageRowVO (val chatMessage: MessageVO): Item<ViewHolder>()
 {
@@ -18,6 +21,10 @@ class LatestMessageRowVO (val chatMessage: MessageVO): Item<ViewHolder>()
     override fun bind(viewHolder: ViewHolder, position: Int)
     {
         viewHolder.itemView.lblMessageContent.text = chatMessage.text
+
+        val formatter = SimpleDateFormat("hh:mm aa", Locale.ENGLISH)
+        val formatted = formatter.format(chatMessage.timestamp)
+        viewHolder.itemView.lblTimeMessage.text = formatted
 
         val chatPartnerId: String
         if (chatMessage.fromId == FirebaseAuth.getInstance().uid)
@@ -38,8 +45,8 @@ class LatestMessageRowVO (val chatMessage: MessageVO): Item<ViewHolder>()
                 chatPartnerUser = p0.getValue(UserVO::class.java)
                 viewHolder.itemView.lblUnitNumberMessage.text = chatPartnerUser?.username
 
-                /*val targetImageView = viewHolder.itemView.img_profile_image_latest_message
-                Picasso.get().load(chatPartnerUser?.profileimageUrl).into(targetImageView)*/
+                val targetImageView = viewHolder.itemView.img_profile_image_latest_message
+                Picasso.get().load(chatPartnerUser?.profileimageUrl).into(targetImageView)
             }
 
             override fun onCancelled(p0: DatabaseError) {}

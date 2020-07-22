@@ -116,6 +116,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txtSearchBill"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:background="#F5F7F9"
             android:layout_marginTop="20dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
