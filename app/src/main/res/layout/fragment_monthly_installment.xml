@@ -130,12 +130,12 @@
                     android:id="@+id/lblTime1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="320 days left"
+                    android:text="Pending Sign"
                     android:textStyle="bold"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="15dp"
                     android:layout_marginTop="10dp"
-                    android:textColor="#514DD9"/>
+                    android:textColor="#FFAA00"/>
 
                 <TextView
                     android:id="@+id/lblRentalPriceTitle1"
@@ -170,8 +170,8 @@
                     android:id="@+id/lblStatus1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Overdue"
-                    android:textColor="#FE0065"
+                    android:text="- -"
+                    android:textStyle="bold"
                     android:layout_alignParentEnd="true"
                     android:layout_below="@+id/lblBillStatus1"
                     android:layout_marginEnd="15dp"/>
@@ -227,7 +227,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="15dp"
                     android:layout_marginTop="10dp"
-                    android:textColor="#514DD9"/>
+                    android:textColor="@color/colorBlack"/>
 
                 <TextView
                     android:id="@+id/lblRentalPriceTitle2"
@@ -318,8 +318,7 @@
                     android:textStyle="bold"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="15dp"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#514DD9"/>
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:id="@+id/lblRentalPriceTitle3"

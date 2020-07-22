@@ -1,14 +1,18 @@
 package com.example.tenantyapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.LinearLayout
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
@@ -27,6 +31,8 @@ class HomeFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private var viewPager: ViewPager? = null
+    private var btnBottomNewHome: Button? = null
+    private var btnBottomNewTenant: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,8 +64,6 @@ class HomeFragment : Fragment() {
 
         view.view_pager?.adapter = adapter
         view.dot3?.setViewPager(view.view_pager)
-
-        Log.d("Desmond Debug: ", "HomeFragment onCreateView")
 
         view.view_pager.setOnPageChangeListener(object: ViewPager.OnPageChangeListener
         {
@@ -99,6 +103,29 @@ class HomeFragment : Fragment() {
                 }
             }
         })
+
+        view.btnFab.setOnClickListener {
+            val bottomSheetDialog = BottomSheetDialog(requireContext(), R.style.BottomSheetDialogTheme)
+            val bottomSheetView = LayoutInflater.from(activity?.applicationContext!!).inflate(R.layout.layout_bottom_sheet, view.findViewById<View>(R.id.bottomSheetContainer) as? LinearLayout)
+
+            btnBottomNewHome = bottomSheetView.findViewById(R.id.btnNewHome)
+            btnBottomNewTenant = bottomSheetView.findViewById(R.id.btnNewTenant)
+
+            btnBottomNewHome?.setOnClickListener {
+                bottomSheetDialog.dismiss()
+                val intent = Intent(activity, NewHomeActivity::class.java)
+                startActivity(intent)
+            }
+
+            btnBottomNewTenant?.setOnClickListener {
+                bottomSheetDialog.dismiss()
+                val intent = Intent(activity, NewTenantActivity::class.java)
+                startActivity(intent)
+            }
+
+            bottomSheetDialog.setContentView(bottomSheetView)
+            bottomSheetDialog.show()
+        }
 
         return view
     }

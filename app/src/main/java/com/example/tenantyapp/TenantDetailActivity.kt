@@ -78,6 +78,11 @@ class TenantDetailActivity : AppCompatActivity()
         lblLateChangesValue.text = lateCharges
         lblBankAccountValue.text = accountNumber
 
+        if (dayLeft != null)
+        {
+            lblStatus.text = dayLeft
+        }
+
         if (isFromNewTenant!!)
         {
             btnDoneTenantDetail.visibility = View.VISIBLE

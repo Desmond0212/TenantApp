@@ -10,6 +10,8 @@ import android.widget.Button
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.luseen.spacenavigation.SpaceItem
 import com.luseen.spacenavigation.SpaceNavigationView
@@ -18,16 +20,16 @@ import com.luseen.spacenavigation.SpaceOnClickListener
 
 class MainActivity : AppCompatActivity()
 {
-    private var spaceNavigationView: SpaceNavigationView? = null
-    private var btnBottomNewHome: Button? = null
-    private var btnBottomNewTenant: Button? = null
+    //private var spaceNavigationView: SpaceNavigationView? = null
+    //private var btnBottomNewHome: Button? = null
+    //private var btnBottomNewTenant: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        spaceNavigationView = findViewById(R.id.space)
+        //spaceNavigationView = findViewById(R.id.space)
 
         val window: Window = this.window
         // clear FLAG_TRANSLUCENT_STATUS flag:
@@ -36,6 +38,11 @@ class MainActivity : AppCompatActivity()
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         // finally change the color
         window.statusBarColor = ContextCompat.getColor(this, R.color.colorBackground)
+
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+
+        routeToFragment(HomeFragment())
 
         /*val adapter = ViewAdapter(supportFragmentManager)
         adapter.addFragment(HomeFragment())
@@ -46,11 +53,11 @@ class MainActivity : AppCompatActivity()
         view_pager?.adapter = adapter
         dot3?.setViewPager(view_pager)*/
 
-        val routeFrag = supportFragmentManager.beginTransaction()
+        /*val routeFrag = supportFragmentManager.beginTransaction()
         routeFrag.replace(R.id.fragment_container, HomeFragment())
-        routeFrag.commit()
+        routeFrag.commit()*/
 
-        spaceNavigationView?.initWithSaveInstanceState(savedInstanceState)
+        /*spaceNavigationView?.initWithSaveInstanceState(savedInstanceState)
         spaceNavigationView?.addSpaceItem(SpaceItem("", R.drawable.ic_baseline_home_24))
         spaceNavigationView?.addSpaceItem(SpaceItem("", R.drawable.icon_2nd_tab))
         spaceNavigationView?.addSpaceItem(SpaceItem("", R.drawable.icon_third_tab))
@@ -81,9 +88,9 @@ class MainActivity : AppCompatActivity()
                 bottomSheetDialog.setContentView(bottomSheetView)
                 bottomSheetDialog.show()
 
-                /*val routeFrag = supportFragmentManager.beginTransaction()
+                *//*val routeFrag = supportFragmentManager.beginTransaction()
                 routeFrag.replace(R.id.fragment_container, NewHomeFragment())
-                routeFrag.commit()*/
+                routeFrag.commit()*//*
             }
 
             override fun onItemClick(itemIndex: Int, itemName: String) {
@@ -155,6 +162,51 @@ class MainActivity : AppCompatActivity()
                     }
                 }
             }
-        })
+        })*/
+    }
+
+    private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId)
+        {
+            R.id.nav_home ->
+            {
+                routeToFragment(HomeFragment())
+                return@OnNavigationItemSelectedListener true
+            }
+
+            R.id.nav_search ->
+            {
+                routeToFragment(MonthlyInstallmentFragment())
+                return@OnNavigationItemSelectedListener true
+            }
+
+            R.id.nav_add_post ->
+            {
+                //startActivity(Intent(this, MessageFragment::class.java))
+                routeToFragment(MessageFragment())
+                return@OnNavigationItemSelectedListener true
+            }
+
+            R.id.nav_notifications ->
+            {
+                routeToFragment(DefectFragment())
+                return@OnNavigationItemSelectedListener true
+            }
+
+            R.id.nav_profile ->
+            {
+                routeToFragment(BillFragment())
+                return@OnNavigationItemSelectedListener true
+            }
+        }
+
+        false
+    }
+
+    private fun routeToFragment(fragment: Fragment)
+    {
+        val routeFrag = supportFragmentManager.beginTransaction()
+        routeFrag.replace(R.id.fragment_container, fragment)
+        routeFrag.commit()
     }
 }
