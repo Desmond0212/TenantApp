@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F9"
+    tools:context=".NotificationActivity">
+
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/round_head"/>
+
+    <ImageView
+        android:id="@+id/imgButtonBackNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_keyboard_arrow_left_white_36"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/lblNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgButtonBackNotification"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="10dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/notificationCardView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/lblNotification"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="5dp"
+        android:elevation="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="50dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/lblUsernameNotificationOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Darren Chong"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/messageNotification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="paid BILL2030 (RM 1, 200.00)"
+                android:textSize="16sp"
+                android:textColor="#616161"
+                android:layout_below="@+id/lblUsernameNotificationOne"
+                android:layout_marginStart="15dp"/>
+
+            <TextView
+                android:id="@+id/lblDateTimeNotification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 hours ago"
+                android:textSize="12sp"
+                android:layout_below="@+id/messageNotification"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="15dp"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/notificationCardView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/notificationCardView1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="5dp"
+        android:elevation="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="10dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/lblUsernameNotificationTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chow Jun Wei"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/messageNotification2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="paid BILL2044 (RM 1, 500.00)"
+                android:textSize="16sp"
+                android:textColor="#616161"
+                android:layout_below="@+id/lblUsernameNotificationTwo"
+                android:layout_marginStart="15dp"/>
+
+            <TextView
+                android:id="@+id/lblDateTimeNotification2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 week ago"
+                android:textSize="12sp"
+                android:layout_below="@+id/messageNotification2"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="15dp"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/notificationCardView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/notificationCardView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="5dp"
+        android:elevation="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="10dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/lblUsernameNotification3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jaslyn Shu"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/messageNotification3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="paid BILL1012 (RM 1, 200.00)"
+                android:textSize="16sp"
+                android:textColor="#616161"
+                android:layout_below="@+id/lblUsernameNotification3"
+                android:layout_marginStart="15dp"/>
+
+            <TextView
+                android:id="@+id/lblDateTimeNotification3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 weeks ago"
+                android:textSize="12sp"
+                android:layout_below="@+id/messageNotification3"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="15dp"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

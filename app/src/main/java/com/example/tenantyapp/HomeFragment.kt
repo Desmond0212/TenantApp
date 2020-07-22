@@ -127,6 +127,11 @@ class HomeFragment : Fragment() {
             bottomSheetDialog.show()
         }
 
+        view.imgNotificationHome.setOnClickListener {
+            val intent = Intent(activity, NotificationActivity::class.java)
+            startActivity(intent)
+        }
+
         return view
     }
 

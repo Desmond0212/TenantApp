@@ -47,6 +47,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="10dp"/>
 
+        <ImageView
+            android:id="@+id/imgNotificationBills"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_notifications_white_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="7dp"/>
+
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/view_pager_bills"
             android:layout_width="match_parent"

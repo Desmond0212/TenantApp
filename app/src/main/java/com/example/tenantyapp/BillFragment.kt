@@ -2,6 +2,7 @@ package com.example.tenantyapp
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -80,6 +81,11 @@ class BillFragment : Fragment() {
         view.layoutConstraintContainer.setOnTouchListener { _, _ ->
             hideSoftKeyboard(activity)
             false
+        }
+
+        view.imgNotificationBills.setOnClickListener {
+            val intent = Intent(activity, NotificationActivity::class.java)
+            startActivity(intent)
         }
 
         return view

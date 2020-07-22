@@ -143,6 +143,11 @@ class MonthlyInstallmentFragment : Fragment()
             }
         })
 
+        view.imgNotificationInstallment.setOnClickListener {
+            val intent = Intent(activity, NotificationActivity::class.java)
+            startActivity(intent)
+        }
+
         return view
     }
 

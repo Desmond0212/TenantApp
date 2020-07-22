@@ -24,6 +24,7 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_new_tenant_creating.*
+import kotlinx.android.synthetic.main.fragment_home.view.*
 import kotlinx.android.synthetic.main.fragment_message.*
 import kotlinx.android.synthetic.main.fragment_message.view.*
 
@@ -91,6 +92,11 @@ class MessageFragment : Fragment() {
         view.layoutMessageContainer.setOnTouchListener { _, _ ->
             hideSoftKeyboard(activity)
             false
+        }
+
+        view.imgNotificationMessage.setOnClickListener {
+            val intent = Intent(activity, NotificationActivity::class.java)
+            startActivity(intent)
         }
 
         view.recyclerView_latest_message.adapter = adapter
