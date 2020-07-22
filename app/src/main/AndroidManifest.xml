@@ -9,7 +9,10 @@
         android:roundIcon="@drawable/undraw_cabin_hkfr"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".LatestMessagesActivityActivity"></activity>
+        <activity android:name=".NewMessageActivity" />
+        <activity android:name=".ChatRoomActivity" />
+        <activity android:name=".LoginActivity" />
         <activity android:name=".NewTenantCreatingActivity" />
         <activity android:name=".NewTenantRentalInfoActivity" />
         <activity android:name=".NewTenantInformationActivity" />

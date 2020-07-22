@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatRoomActivity"
+    android:background="#F5F7F9">
+
+    <RelativeLayout
+        android:id="@+id/layoutTopBarChatRoom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:background="#03081C">
+
+        <ImageView
+            android:id="@+id/imgButtonBackChatRoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_keyboard_arrow_left_white_36"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"/>
+
+        <TextView
+            android:id="@+id/lblUnitNumberChatRoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Desmond Wong"
+            android:textColor="@color/colorWhite"
+            android:layout_toEndOf="@+id/imgButtonBackChatRoom"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"/>
+
+        <ImageView
+            android:id="@+id/imgPhoneCall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_call_white_24"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"/>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_chat_room"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="70dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintTop_toBottomOf="@+id/layoutTopBarChatRoom"
+        app:layout_constraintBottom_toTopOf="@+id/layoutBottomBarCardView"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/layoutBottomBarCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:elevation="10dp">
+
+        <RelativeLayout
+            android:id="@+id/layoutBottomBarChatRoom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite">
+
+            <ImageView
+                android:id="@+id/imgButtonEmoji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_sentiment_satisfied_alt_black_24"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"/>
+
+            <EditText
+                android:id="@+id/txt_enter_message_chat_room"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Type message"
+                android:textSize="14sp"
+                android:textColor="@color/colorBlack"
+                android:background="@color/colorWhite"
+                android:layout_toEndOf="@+id/imgButtonEmoji"
+                android:layout_toStartOf="@+id/imgButtonAddItemChatRoom"
+                android:layout_marginTop="18dp"/>
+
+            <ImageView
+                android:id="@+id/imgButtonAddItemChatRoom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_add_black_24"
+                android:layout_toStartOf="@+id/layoutBgButtonSend"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="5dp"/>
+
+            <LinearLayout
+                android:id="@+id/layoutBgButtonSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/rounded_badge_background_yellow"
+                android:padding="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp">
+
+                <ImageButton
+                    android:id="@+id/btn_send_message_chat_room"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/baseline_send_black_18"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

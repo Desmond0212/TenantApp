@@ -79,6 +79,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:hint="Email"
+        android:text="desmond@gmail.com"
+        android:inputType="textEmailAddress"
         android:paddingBottom="20dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
@@ -89,6 +91,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
+        android:text="qwerty"
+        android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@+id/txtEmail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -208,6 +212,22 @@
             android:textColor="#FFAA00"
             android:background="@android:color/transparent"
             android:layout_marginStart="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#424242"
+        android:alpha="0.9"
+        android:gravity="center_horizontal">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animLoginLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"/>
 
     </LinearLayout>
 

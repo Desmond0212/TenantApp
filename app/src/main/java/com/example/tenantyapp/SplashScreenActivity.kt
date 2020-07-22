@@ -29,7 +29,7 @@ class SplashScreenActivity : AppCompatActivity()
             {
                 try
                 {
-                    sleep(4000)
+                    sleep(2000) //DESMOND Temp changes
                 }
                 catch (e: InterruptedException)
                 {
