@@ -1,14 +1,17 @@
 package com.example.tenantyapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_tenant_detail.*
+
 
 class TenantDetailActivity : AppCompatActivity()
 {
@@ -42,6 +45,27 @@ class TenantDetailActivity : AppCompatActivity()
         btnDoneTenantDetail.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+        }
+
+        topRightIcon.setOnClickListener {
+            //Creating the instance of PopupMenu
+            //Creating the instance of PopupMenu
+            val popup = PopupMenu(this, topRightIcon)
+            //Inflating the Popup using xml file
+            //Inflating the Popup using xml file
+            popup.menuInflater.inflate(R.menu.top_bar_menu, popup.getMenu())
+
+            //registering popup with OnMenuItemClickListener
+            //registering popup with OnMenuItemClickListener
+            popup.setOnMenuItemClickListener(object : PopupMenu.OnMenuItemClickListener {
+                override fun onMenuItemClick(item: MenuItem): Boolean {
+                    Toast.makeText(applicationContext, "You Clicked : " + item.getTitle(), Toast.LENGTH_SHORT).show()
+                    return true
+                }
+            })
+
+            popup.show() //showing popup menu
+
         }
     }
 
@@ -81,6 +105,15 @@ class TenantDetailActivity : AppCompatActivity()
         if (dayLeft != null)
         {
             lblStatus.text = dayLeft
+
+            if (dayLeft == "Pending Sign")
+            {
+                layoutTenantTitleCardView.visibility = View.VISIBLE
+            }
+            else
+            {
+                layoutTenantTitleCardView.visibility = View.GONE
+            }
         }
 
         if (isFromNewTenant!!)

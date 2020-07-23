@@ -25,10 +25,10 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imgMenu"
+            android:id="@+id/imgMenuBills"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/baseline_menu_white_24"
+            android:src="@drawable/baseline_person_white_24"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="15dp"
@@ -96,8 +96,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="30dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:padding="10dp"/>
 
         <androidx.cardview.widget.CardView
@@ -108,8 +108,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="15dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             app:cardCornerRadius="5dp"
             android:elevation="15dp"
             android:paddingBottom="20dp">
@@ -143,12 +143,12 @@
                     android:id="@+id/lblTime1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="14:28 pm"
+                    android:text="RM 1,200.00"
                     android:textStyle="bold"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="15dp"
                     android:layout_marginTop="10dp"
-                    android:textColor="#514DD9"/>
+                    android:textColor="@color/colorBlack"/>
 
                 <TextView
                     android:id="@+id/lblUsername1"
@@ -182,8 +182,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="15dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             app:cardCornerRadius="5dp"
             android:elevation="15dp"
             android:paddingBottom="20dp">
@@ -217,12 +217,12 @@
                     android:id="@+id/lblTime2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="9.35 pm"
+                    android:text="RM 1,500.00"
                     android:textStyle="bold"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="15dp"
                     android:layout_marginTop="10dp"
-                    android:textColor="#514DD9"/>
+                    android:textColor="@color/colorBlack"/>
 
                 <TextView
                     android:id="@+id/lblUsername2"
@@ -256,8 +256,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="15dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             app:cardCornerRadius="5dp"
             android:elevation="15dp"
             android:paddingBottom="20dp">
@@ -291,12 +291,12 @@
                     android:id="@+id/lblTime3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="19.35 pm"
+                    android:text="RM 700.00"
                     android:textStyle="bold"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="15dp"
                     android:layout_marginTop="10dp"
-                    android:textColor="#514DD9"/>
+                    android:textColor="@color/colorBlack"/>
 
                 <TextView
                     android:id="@+id/lblUsername3"
@@ -330,8 +330,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="15dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             app:cardCornerRadius="5dp"
             android:elevation="15dp"
             android:paddingBottom="20dp">
@@ -365,12 +365,12 @@
                     android:id="@+id/lblTime4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="9.35 am"
+                    android:text="RM 1,200.00"
                     android:textStyle="bold"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="15dp"
                     android:layout_marginTop="10dp"
-                    android:textColor="#514DD9"/>
+                    android:textColor="@color/colorBlack"/>
 
                 <TextView
                     android:id="@+id/lblUsername4"
@@ -404,8 +404,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="15dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             app:cardCornerRadius="5dp"
             android:elevation="15dp"
             android:paddingBottom="20dp">
@@ -439,12 +439,12 @@
                     android:id="@+id/lblTime5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="9.35 pm"
+                    android:text="RM 1,700.00"
                     android:textStyle="bold"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="15dp"
                     android:layout_marginTop="10dp"
-                    android:textColor="#514DD9"/>
+                    android:textColor="@color/colorBlack"/>
 
                 <TextView
                     android:id="@+id/lblUsername5"

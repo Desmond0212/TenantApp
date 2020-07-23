@@ -83,7 +83,7 @@
                 android:src="@drawable/baseline_sentiment_satisfied_alt_black_24"
                 android:layout_marginStart="20dp"
                 android:layout_marginBottom="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="18dp"
                 android:layout_marginEnd="15dp"/>
 
             <EditText

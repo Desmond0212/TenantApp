@@ -70,6 +70,11 @@ class LoginActivity : AppCompatActivity()
         }
     }
 
+    override fun onBackPressed() {
+        //super.onBackPressed()
+        //dont do anything
+    }
+
     private fun performLogin()
     {
         val email = txtEmail.text.toString()

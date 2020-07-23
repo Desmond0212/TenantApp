@@ -60,6 +60,11 @@ class DefectFragment : Fragment() {
         view.view_pager_defects?.adapter = adapter
         view.dot3_defects?.setViewPager(view.view_pager_defects)
 
+        view.imgMenuDefect.setOnClickListener {
+            val intent = Intent(activity, ProfileActivity::class.java)
+            startActivity(intent)
+        }
+
         view.view_pager_defects.setOnPageChangeListener(object: ViewPager.OnPageChangeListener
         {
             override fun onPageScrollStateChanged(state: Int) {
@@ -91,6 +96,50 @@ class DefectFragment : Fragment() {
         layoutConstraint?.setOnTouchListener { _, _ ->
             hideSoftKeyboard(activity)
             false
+        }
+
+        view.cardViewDefectMessage1.setOnClickListener {
+            val intent = Intent(activity, DefectDetailActivity::class.java)
+            intent.putExtra("DefectTitle", "Wifi is not working")
+            intent.putExtra("PostDate", "July 20 2020")
+            intent.putExtra("DefectStatus", "Open")
+            intent.putExtra("DefectFrom", "Darren Chong")
+            intent.putExtra("cardNumber", 0)
+            intent.putExtra("gotVideo", true)
+            startActivity(intent)
+        }
+
+        view.cardViewDefectMessage2.setOnClickListener {
+            val intent = Intent(activity, DefectDetailActivity::class.java)
+            intent.putExtra("DefectTitle", "Cracks on the walls!!!")
+            intent.putExtra("PostDate", "May 16 2020")
+            intent.putExtra("DefectStatus", "Resolved")
+            intent.putExtra("DefectFrom", "Jaslyn Shu")
+            intent.putExtra("cardNumber", 1)
+            intent.putExtra("gotVideo", false)
+            startActivity(intent)
+        }
+
+        view.cardViewDefectMessage3.setOnClickListener {
+            val intent = Intent(activity, DefectDetailActivity::class.java)
+            intent.putExtra("DefectTitle", "Toilet lid broken")
+            intent.putExtra("PostDate", "April 06 2020")
+            intent.putExtra("DefectStatus", "Resolved")
+            intent.putExtra("DefectFrom", "Jun Wei")
+            intent.putExtra("cardNumber", 2)
+            intent.putExtra("gotVideo", true)
+            startActivity(intent)
+        }
+
+        view.cardViewDefectMessage4.setOnClickListener {
+            val intent = Intent(activity, DefectDetailActivity::class.java)
+            intent.putExtra("DefectTitle", "Shower Screen and Toilet lid broken")
+            intent.putExtra("PostDate", "April 02 2020")
+            intent.putExtra("DefectStatus", "Resolved")
+            intent.putExtra("DefectFrom", "Vinny Chong")
+            intent.putExtra("cardNumber", 3)
+            intent.putExtra("gotVideo", false)
+            startActivity(intent)
         }
 
         return view

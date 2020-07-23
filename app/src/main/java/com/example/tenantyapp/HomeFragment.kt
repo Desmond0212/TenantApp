@@ -132,6 +132,11 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
+        view.imgMenuHome.setOnClickListener {
+            val intent = Intent(activity, ProfileActivity::class.java)
+            startActivity(intent)
+        }
+
         return view
     }
 

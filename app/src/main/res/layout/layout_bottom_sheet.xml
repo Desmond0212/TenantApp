@@ -9,25 +9,28 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
 
         <Button
             android:id="@+id/btnNewHome"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Home"
             android:textAllCaps="false"
             android:layout_marginStart="80dp"
             android:layout_marginEnd="80dp"
             android:layout_marginTop="5dp"
+            android:padding="15dp"
             android:background="@drawable/rounded_button_background_yellow_border" />
 
         <Button
             android:id="@+id/btnNewTenant"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Tenant"
             android:textAllCaps="false"
+            android:padding="15dp"
             android:layout_marginStart="80dp"
             android:layout_marginEnd="80dp"
             android:layout_marginTop="20dp"

@@ -56,8 +56,11 @@ class ChatRoomActivity : AppCompatActivity()
         messagesList()
 
         btn_send_message_chat_room.setOnClickListener {
-            Log.d(TAG, "Sending message....")
-            performSendMessage()
+            if (txt_enter_message_chat_room.text.toString() != "")
+            {
+                Log.d(TAG, "Sending message....")
+                performSendMessage()
+            }
         }
 
         imgButtonBackChatRoom.setOnClickListener {

@@ -148,6 +148,11 @@ class MonthlyInstallmentFragment : Fragment()
             startActivity(intent)
         }
 
+        view.imgMenuInstallment.setOnClickListener {
+            val intent = Intent(activity, ProfileActivity::class.java)
+            startActivity(intent)
+        }
+
         return view
     }
 

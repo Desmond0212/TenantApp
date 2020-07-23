@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import kotlinx.android.synthetic.main.fragment_bill.view.*
+import kotlinx.android.synthetic.main.fragment_home.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -85,6 +86,11 @@ class BillFragment : Fragment() {
 
         view.imgNotificationBills.setOnClickListener {
             val intent = Intent(activity, NotificationActivity::class.java)
+            startActivity(intent)
+        }
+
+        view.imgMenuBills.setOnClickListener {
+            val intent = Intent(activity, ProfileActivity::class.java)
             startActivity(intent)
         }
 

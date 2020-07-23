@@ -111,6 +111,11 @@ class MessageFragment : Fragment() {
             startActivity(intent)
         }
 
+        view.imgMenuMessage.setOnClickListener {
+            val intent = Intent(activity, ProfileActivity::class.java)
+            startActivity(intent)
+        }
+
         verifyUserIsLoggedIn()
         fetchCurrentUser()
         latestMessageListener(view)
@@ -173,7 +178,6 @@ class MessageFragment : Fragment() {
             override fun onChildMoved(p0: DataSnapshot, p1: String?) {}
             override fun onChildRemoved(p0: DataSnapshot) {}
         })
-
     }
 
     private fun refreshLatestMessageRecyclerView()

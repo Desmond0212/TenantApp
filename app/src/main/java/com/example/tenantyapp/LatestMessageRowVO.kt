@@ -45,8 +45,8 @@ class LatestMessageRowVO (val chatMessage: MessageVO): Item<ViewHolder>()
                 chatPartnerUser = p0.getValue(UserVO::class.java)
                 viewHolder.itemView.lblUnitNumberMessage.text = chatPartnerUser?.username
 
-                val targetImageView = viewHolder.itemView.img_profile_image_latest_message
-                Picasso.get().load(chatPartnerUser?.profileimageUrl).into(targetImageView)
+                /*val targetImageView = viewHolder.itemView.img_profile_image_latest_message
+                Picasso.get().load(chatPartnerUser?.profileimageUrl).into(targetImageView)*/
             }
 
             override fun onCancelled(p0: DatabaseError) {}
