@@ -132,8 +132,27 @@ class NewTenantRentalInfoActivity : AppCompatActivity(), AdapterView.OnItemSelec
                 lblBankName.text != null && lblBankName.text.toString() != "" &&
                 lblAccountNumber.text != null && lblAccountNumber.text.toString() != "")
             {
-                ConvertedBitmap = ""
-                dialogAction()
+                /*ConvertedBitmap = ""
+                dialogAction()*/
+
+                val intent = Intent(this, NewTenantCreatingActivity::class.java)
+                intent.putExtra("SelectedUnit", selectedUnit)
+                intent.putExtra("UnitAddress", unitAddress)
+                intent.putExtra("FullName", fullName)
+                intent.putExtra("EmailAddress", emailAddress)
+                intent.putExtra("PhoneNumber", phoneNumber)
+                intent.putExtra("NumberOfOccupant", numberOfOccupant)
+                intent.putExtra("StartDate", txtStartDate.text.toString())
+                intent.putExtra("EndDate", txtEndDate.text.toString())
+                intent.putExtra("RentalPrice", txtRentalPrice.text.toString())
+                intent.putExtra("SecurityDeposit", txtSecurityDeposit.text.toString())
+                intent.putExtra("DayPaymentDue", txtDayPaymentDue.text.toString())
+                intent.putExtra("LateCharges", txtLateCharges.text.toString())
+                intent.putExtra("BillsPeriod", txtBillsPeriod.text.toString())
+                intent.putExtra("BankName", lblBankName.text.toString())
+                intent.putExtra("ContractPeriod", "2 year contract")
+                intent.putExtra("BankAccountNumber", lblAccountNumber.text.toString())
+                startActivity(intent)
             }
             else
             {
@@ -273,25 +292,6 @@ class NewTenantRentalInfoActivity : AppCompatActivity(), AdapterView.OnItemSelec
             view!!.isDrawingCacheEnabled = true
             mSignature?.save(view!!, StoredPath)
             dialog!!.dismiss()
-
-            val intent = Intent(this, NewTenantCreatingActivity::class.java)
-            intent.putExtra("SelectedUnit", selectedUnit)
-            intent.putExtra("UnitAddress", unitAddress)
-            intent.putExtra("FullName", fullName)
-            intent.putExtra("EmailAddress", emailAddress)
-            intent.putExtra("PhoneNumber", phoneNumber)
-            intent.putExtra("NumberOfOccupant", numberOfOccupant)
-            intent.putExtra("StartDate", txtStartDate.text.toString())
-            intent.putExtra("EndDate", txtEndDate.text.toString())
-            intent.putExtra("RentalPrice", txtRentalPrice.text.toString())
-            intent.putExtra("SecurityDeposit", txtSecurityDeposit.text.toString())
-            intent.putExtra("DayPaymentDue", txtDayPaymentDue.text.toString())
-            intent.putExtra("LateCharges", txtLateCharges.text.toString())
-            intent.putExtra("BillsPeriod", txtBillsPeriod.text.toString())
-            intent.putExtra("BankName", lblBankName.text.toString())
-            intent.putExtra("ContractPeriod", "2 year contract")
-            intent.putExtra("BankAccountNumber", lblAccountNumber.text.toString())
-            startActivity(intent)
 
         }
         mCancel!!.setOnClickListener {

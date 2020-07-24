@@ -90,8 +90,17 @@ class TenantDetailActivity : AppCompatActivity()
         }
 
         btnDoneTenantDetail.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            if (bitmap == null)
+            {
+                Toast.makeText(this, "Please complete the signature before proceed.", Toast.LENGTH_SHORT).show()
+            }
+            else
+            {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                Toast.makeText(this, "You have created your new tenant successfully.", Toast.LENGTH_SHORT).show()
+            }
+
         }
 
         topRightIcon.setOnClickListener {
@@ -200,6 +209,7 @@ class TenantDetailActivity : AppCompatActivity()
                     bitmap = BitmapFactory.decodeFile(imgFile.absolutePath)
                     val myImage = findViewById(R.id.img_sign) as ImageView
                     myImage.setImageBitmap(bitmap)
+
                 }
             }
         }
