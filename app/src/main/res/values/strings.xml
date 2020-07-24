@@ -2,4 +2,6 @@
     <string name="app_name">TenantApp</string>
 
     <string name="login_activity_btn_sign_up"><u>Create an account</u></string>
+
+    <string name="tenant_detail_activity_btn_add_signature"><u>Add Signature</u></string>
 </resources>

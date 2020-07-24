@@ -2,11 +2,14 @@ package com.example.tenantyapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_bill_details.*
+import kotlinx.android.synthetic.main.activity_defect_detail.*
 
 class BillDetailsActivity : AppCompatActivity()
 {
@@ -29,6 +32,26 @@ class BillDetailsActivity : AppCompatActivity()
 
         imgDownload.setOnClickListener {
             Toast.makeText(this, "Your bill is downloading...", Toast.LENGTH_SHORT).show()
+        }
+
+        imgMoreOptionBillDetail.setOnClickListener {
+            //Creating the instance of PopupMenu
+            //Creating the instance of PopupMenu
+            val popup = PopupMenu(this, imgMoreOptionBillDetail)
+            //Inflating the Popup using xml file
+            //Inflating the Popup using xml file
+            popup.menuInflater.inflate(R.menu.top_bar_billing_menu, popup.getMenu())
+
+            //registering popup with OnMenuItemClickListener
+            //registering popup with OnMenuItemClickListener
+            popup.setOnMenuItemClickListener(object : PopupMenu.OnMenuItemClickListener {
+                override fun onMenuItemClick(item: MenuItem): Boolean {
+                    Toast.makeText(applicationContext, "You Clicked : " + item.getTitle(), Toast.LENGTH_SHORT).show()
+                    return true
+                }
+            })
+
+            popup.show() //showing popup menu
         }
 
         val billNumber = intent.getStringExtra("BillNumber")
