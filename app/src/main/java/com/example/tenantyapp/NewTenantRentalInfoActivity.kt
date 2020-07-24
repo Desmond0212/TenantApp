@@ -115,7 +115,7 @@ class NewTenantRentalInfoActivity : AppCompatActivity(), AdapterView.OnItemSelec
                 intent.putExtra("LateCharges", txtLateCharges.text.toString())
                 intent.putExtra("BillsPeriod", txtBillsPeriod.text.toString())
                 intent.putExtra("BankName", lblBankName.text.toString())
-                intent.putExtra("ContractPeriod", contractPeriodValue)
+                intent.putExtra("ContractPeriod", "2 year contract")
                 intent.putExtra("BankAccountNumber", lblAccountNumber.text.toString())
                 startActivity(intent)
             }

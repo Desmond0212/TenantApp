@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_new_tenant.*
 class NewTenantActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
 {
     private var spinner : Spinner? = null
-    private var units = arrayOf("A-13-14", "A-20-22", "B-10-29")
+    private var units = arrayOf("A-13-14", "A-20-22", "B-10-29", "A-33-02", "C-27-09")
     private var selectedUnit: String? = null
 
     @SuppressLint("ClickableViewAccessibility")
@@ -83,6 +83,16 @@ class NewTenantActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
             2 ->
             {
                 txtUnitAddress.setText("B-10-29 Botani Indah Condo, Simpang 34 Jalan Kuching, 52200 Kuala Lumpur")
+            }
+
+            3 ->
+            {
+                txtUnitAddress.setText("A-33-02 Botani Indah Condo, Simpang 34 Jalan Kuching, 52200 Kuala Lumpur")
+            }
+
+            4 ->
+            {
+                txtUnitAddress.setText("C-27-09 Botani Indah Condo, Simpang 34 Jalan Kuching, 52200 Kuala Lumpur")
             }
         }
     }
