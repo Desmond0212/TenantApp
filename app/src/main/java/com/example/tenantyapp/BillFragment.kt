@@ -94,6 +94,76 @@ class BillFragment : Fragment() {
             startActivity(intent)
         }
 
+        view.billsCardView1.setOnClickListener {
+            val intent = Intent(activity, BillDetailsActivity::class.java)
+            intent.putExtra("BillNumber", "BILL0033")
+            intent.putExtra("Username", "Chow Jun Wei")
+            intent.putExtra("BillingStatus", "Paid")
+            intent.putExtra("BillDate", "July 02, 2020")
+            intent.putExtra("DueDate", "July 16, 2020")
+            intent.putExtra("RentalAmount", "RM 1,200.00")
+            intent.putExtra("ReceiptNumber", "RECEIPT = REC0001")
+            intent.putExtra("PaymentDate", "July 11, 2020")
+            intent.putExtra("PaymentNumber", 0)
+            startActivity(intent)
+        }
+
+        view.billsCardView2.setOnClickListener {
+            val intent = Intent(activity, BillDetailsActivity::class.java)
+            intent.putExtra("BillNumber", "BILL0032")
+            intent.putExtra("Username", "Darren Chong")
+            intent.putExtra("BillingStatus", "Overdue")
+            intent.putExtra("BillDate", "June 18, 2020")
+            intent.putExtra("DueDate", "July 02, 2020")
+            intent.putExtra("RentalAmount", "RM 1,500.00")
+            intent.putExtra("ReceiptNumber", "RECEIPT = REC0019")
+            intent.putExtra("PaymentDate", "July 18, 2020")
+            intent.putExtra("PaymentNumber", 1)
+            startActivity(intent)
+        }
+
+        view.billsCardView3.setOnClickListener {
+            val intent = Intent(activity, BillDetailsActivity::class.java)
+            intent.putExtra("BillNumber", "BILL0031")
+            intent.putExtra("Username", "Desmond Wong")
+            intent.putExtra("BillingStatus", "Paid")
+            intent.putExtra("BillDate", "July 01, 2020")
+            intent.putExtra("DueDate", "July 15, 2020")
+            intent.putExtra("RentalAmount", "RM 700.00")
+            intent.putExtra("ReceiptNumber", "RECEIPT = REC0023")
+            intent.putExtra("PaymentDate", "July 03, 2020")
+            intent.putExtra("PaymentNumber", 2)
+            startActivity(intent)
+        }
+
+        view.billsCardView4.setOnClickListener {
+            val intent = Intent(activity, BillDetailsActivity::class.java)
+            intent.putExtra("BillNumber", "BILL0030")
+            intent.putExtra("Username", "Jaslyn Shu")
+            intent.putExtra("BillingStatus", "Paid")
+            intent.putExtra("BillDate", "May 25, 2020")
+            intent.putExtra("DueDate", "June 18, 2020")
+            intent.putExtra("RentalAmount", "RM 1,200.00")
+            intent.putExtra("ReceiptNumber", "RECEIPT = REC0088")
+            intent.putExtra("PaymentDate", "June 16, 2020")
+            intent.putExtra("PaymentNumber", 3)
+            startActivity(intent)
+        }
+
+        view.billsCardView5.setOnClickListener {
+            val intent = Intent(activity, BillDetailsActivity::class.java)
+            intent.putExtra("BillNumber", "BILL0029")
+            intent.putExtra("Username", "Crystal So")
+            intent.putExtra("BillingStatus", "Paid")
+            intent.putExtra("BillDate", "June 08, 2020")
+            intent.putExtra("DueDate", "June 24, 2020")
+            intent.putExtra("RentalAmount", "RM 1,700.00")
+            intent.putExtra("ReceiptNumber", "RECEIPT = REC0005")
+            intent.putExtra("PaymentDate", "June 10, 2020")
+            intent.putExtra("PaymentNumber", 4)
+            startActivity(intent)
+        }
+
         return view
     }
 

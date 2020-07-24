@@ -50,7 +50,7 @@ class NewTenantRentalInfoActivity : AppCompatActivity(), AdapterView.OnItemSelec
 
         getExtraStringValue()
 
-        spinner = findViewById(R.id.spinnerTenantRentalInfo)
+        /*spinner = findViewById(R.id.spinnerTenantRentalInfo)
         spinner!!.onItemSelectedListener = this
         // Create an ArrayAdapter using a simple spinner layout and languages array
         val aa = ArrayAdapter(this, android.R.layout.simple_spinner_item, contractPeriod)
@@ -70,7 +70,7 @@ class NewTenantRentalInfoActivity : AppCompatActivity(), AdapterView.OnItemSelec
             txtBillsPeriod.clearFocus()
 
             false
-        }
+        }*/
 
         layoutNewTenantRentalInfo.setOnTouchListener { _, _ ->
             hideSoftKeyboard(this)
