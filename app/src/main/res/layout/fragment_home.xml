@@ -421,6 +421,39 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+                <LinearLayout
+                    android:id="@+id/layoutMessageCaht"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/lblMessage"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView_latest_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/lblMessage"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:visibility="visible"
+                        android:background="#F5F7F9"
+                        android:layout_marginTop="5dp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView_latest_home2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/lblMessage"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:visibility="gone"
+                        android:background="#F5F7F9"
+                        android:layout_marginTop="5dp"/>
+
+                </LinearLayout>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/messageCardView"
             android:layout_width="match_parent"
@@ -434,7 +467,7 @@
             app:cardCornerRadius="5dp"
             android:elevation="15dp"
             android:paddingBottom="20dp"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -754,7 +787,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    app:layout_constraintTop_toBottomOf="@+id/messageCardView">
+                    app:layout_constraintTop_toBottomOf="@+id/layoutMessageCaht">
 
                     <TextView
                         android:id="@+id/lblBillMonth"
@@ -766,7 +799,6 @@
                         android:textSize="20sp"
                         android:layout_marginTop="40dp"
                         android:layout_marginStart="40dp"
-
                         app:layout_constraintStart_toStartOf="parent" />
 
                     <Button
@@ -843,10 +875,10 @@
                         android:id="@+id/lblBadgeBilling"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Required Utility"
+                        android:text="Bill"
                         android:textStyle="bold"
                         android:textAlignment="center"
-                        android:textColor="#FE0065"
+                        android:textColor="@color/colorYellow"
                         android:layout_alignParentEnd="true"
                         android:layout_below="@+id/lblTimeBilling"
                         android:layout_marginEnd="15dp"
@@ -1048,7 +1080,7 @@
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/cardViewDefectMessage1"
+                    android:id="@+id/cardViewDefectMessageHome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toBottomOf="@+id/billingCardView"

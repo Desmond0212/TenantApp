@@ -35,7 +35,7 @@
         android:id="@+id/lblAppName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TENANT"
+        android:text="TENANTY"
         android:textColor="@color/colorYellow"
         android:textStyle="bold"
         android:textSize="24sp"

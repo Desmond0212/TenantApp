@@ -103,13 +103,13 @@ class MessageFragment : Fragment() {
         view.recyclerView_latest_message.layoutManager = LinearLayoutManager(activity)
 
         //Adapter Click Listener
-        adapter.setOnItemClickListener { item, view ->
+        /*adapter.setOnItemClickListener { item, view ->
             val intent = Intent(activity, ChatRoomActivity::class.java)
             val row = item as LatestMessageRowVO
 
             intent.putExtra(NewMessageActivity.USER_KEY, row.chatPartnerUser)
             startActivity(intent)
-        }
+        }*/
 
         view.imgMenuMessage.setOnClickListener {
             val intent = Intent(activity, ProfileActivity::class.java)
@@ -160,7 +160,7 @@ class MessageFragment : Fragment() {
             override fun onChildAdded(p0: DataSnapshot, p1: String?)
             {
                 val chatMessage = p0.getValue(MessageVO::class.java) ?: return
-                adapter.add(LatestMessageRowVO(chatMessage))
+                //adapter.add(LatestMessageRowVO(chatMessage))
                 latestMessageMap[p0.key!!] = chatMessage
                 Log.d(TAG, "Latest Message: ${latestMessageMap[p0.key!!]}")
                 refreshLatestMessageRecyclerView()
@@ -169,7 +169,7 @@ class MessageFragment : Fragment() {
             override fun onChildChanged(p0: DataSnapshot, p1: String?)
             {
                 val chatMessage = p0.getValue(MessageVO::class.java) ?: return
-                adapter.add(LatestMessageRowVO(chatMessage))
+                //adapter.add(LatestMessageRowVO(chatMessage))
                 latestMessageMap[p0.key!!] = chatMessage
                 refreshLatestMessageRecyclerView()
             }
@@ -184,7 +184,7 @@ class MessageFragment : Fragment() {
     {
         adapter.clear()
         latestMessageMap.values.forEach {
-            adapter.add(LatestMessageRowVO(it))
+            //adapter.add(LatestMessageRowVO(it))
         }
     }
 

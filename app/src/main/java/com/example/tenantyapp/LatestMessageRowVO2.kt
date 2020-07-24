@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.user_row_latest_message.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class LatestMessageRowVO (val chatMessage: MessageVO, val chatPosition: Int): Item<ViewHolder>()
+class LatestMessageRowVO2 (val chatMessage: MessageVO, val chatPosition: Int): Item<ViewHolder>()
 {
     var chatPartnerUser: UserVO? = null
 
@@ -39,7 +39,7 @@ class LatestMessageRowVO (val chatMessage: MessageVO, val chatPosition: Int): It
             {
                 chatPartnerUser = p0.getValue(UserVO::class.java)
 
-                if (chatPartnerUser?.username == "A-20-24")
+                if (chatPartnerUser?.username == "A-13-14 Members")
                 {
                     viewHolder.itemView.lblUnitNumberMessage.text = chatPartnerUser?.username
                     viewHolder.itemView.lblMessageContent.text = chatMessage.text
@@ -58,6 +58,7 @@ class LatestMessageRowVO (val chatMessage: MessageVO, val chatPosition: Int): It
                     viewHolder.itemView.lblTimeMessage.visibility = View.GONE
                     viewHolder.itemView.latestMessageCardView.visibility = View.GONE
                 }
+
                 /*val targetImageView = viewHolder.itemView.img_profile_image_latest_message
                 Picasso.get().load(chatPartnerUser?.profileimageUrl).into(targetImageView)*/
             }
