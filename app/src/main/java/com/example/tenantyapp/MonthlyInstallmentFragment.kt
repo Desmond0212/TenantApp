@@ -60,28 +60,28 @@ class MonthlyInstallmentFragment : Fragment()
 
         cardViewOne?.setOnClickListener {
             val intent = Intent(activity, TenantDetailActivity::class.java)
-            intent.putExtra("Username", "Darren Chong")
+            intent.putExtra("Username", "Vinny Chong")
             intent.putExtra("ContactDate", "2 years contact")
             intent.putExtra("DayLeft", "Pending Sign")
             intent.putExtra("RentalPrice", "RM 1200.00 / month")
             intent.putExtra("BillsStatus", "- -")
             intent.putExtra("StartDate", "27 July 2018")
             intent.putExtra("EndDate", "28 July 2020")
-            intent.putExtra("Email", "Darren@gmail.com")
+            intent.putExtra("Email", "Vinny@gmail.com")
             intent.putExtra("PhoneNumber", "+6018 2233987")
             intent.putExtra("TotalContactAmount", "RM 28,800.00")
             intent.putExtra("PaymentDue", "5 days")
             intent.putExtra("LateCharges", "RM 500.00")
             intent.putExtra("BillsPeriod", "Every 27th of the month")
             intent.putExtra("AccountReceive", "Maybank")
-            intent.putExtra("BankAccountNumber", "98765434567 - Darren Chong")
+            intent.putExtra("BankAccountNumber", "98765434567 - Vinny Chong")
 
             startActivity(intent)
         }
 
         cardViewTwo?.setOnClickListener {
             val intent = Intent(activity, TenantDetailActivity::class.java)
-            intent.putExtra("Username", "Jun Wei Chow")
+            intent.putExtra("Username", "Eddie Zhang")
             intent.putExtra("ContactDate", "3 months contact")
             intent.putExtra("DayLeft", "60 days left")
             intent.putExtra("RentalPrice", "RM 1500.00 / month")
@@ -95,7 +95,7 @@ class MonthlyInstallmentFragment : Fragment()
             intent.putExtra("LateCharges", "RM 500.00")
             intent.putExtra("BillsPeriod", "Every 5th of the month")
             intent.putExtra("AccountReceive", "Hong Leong Bank")
-            intent.putExtra("BankAccountNumber", "23456798765 - Chow Jun Wei")
+            intent.putExtra("BankAccountNumber", "23456798765 - Eddie Chong")
 
             startActivity(intent)
         }

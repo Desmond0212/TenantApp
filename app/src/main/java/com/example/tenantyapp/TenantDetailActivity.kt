@@ -67,6 +67,14 @@ class TenantDetailActivity : AppCompatActivity()
         // finally change the color
         window.statusBarColor = ContextCompat.getColor(this, R.color.colorBackground)
 
+        img_sig = findViewById(R.id.img_sign) as ImageView
+        layout = findViewById(R.id.layout) as LinearLayout
+        btn_get_sign = findViewById(R.id.btnAddSignature) as Button
+        dialog = Dialog(this)
+        dialog!!.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog!!.setContentView(R.layout.dialog_signature2)
+        dialog!!.setCancelable(true)
+
         getExtraString()
 
         imgBackButton.setOnClickListener {
@@ -113,14 +121,6 @@ class TenantDetailActivity : AppCompatActivity()
 
         Storagepermission()
         //Contactpermission()
-
-        img_sig = findViewById(R.id.img_sign) as ImageView
-        layout = findViewById(R.id.layout) as LinearLayout
-        btn_get_sign = findViewById(R.id.btnAddSignature) as Button
-        dialog = Dialog(this)
-        dialog!!.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog!!.setContentView(R.layout.dialog_signature2)
-        dialog!!.setCancelable(true)
 
         btn_get_sign!!.setOnClickListener {
             ConvertedBitmap = ""
@@ -519,6 +519,8 @@ class TenantDetailActivity : AppCompatActivity()
             {
                 layoutTenantTitleCardView.visibility = View.GONE
                 layout?.visibility = View.GONE
+                btnAddSignature.visibility = View.GONE
+                layoutSignatureDetail.visibility = View.GONE
             }
         }
 

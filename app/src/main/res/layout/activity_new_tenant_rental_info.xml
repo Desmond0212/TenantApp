@@ -289,7 +289,7 @@
         android:id="@+id/lblAccountNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1223456754343 - Chow Jun Wei"
+        android:text="1223456754343 - Eddie Zhang"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblBankName"

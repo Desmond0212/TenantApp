@@ -100,7 +100,7 @@
                             android:id="@+id/lblUsernameBillDetail"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="JDarren Chong"
+                            android:text="Vinny Chong"
                             android:textSize="14sp"
                             android:textColor="@color/colorBlack"
                             android:textStyle="bold"

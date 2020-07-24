@@ -130,7 +130,7 @@
                     android:id="@+id/lblDefectFrom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Darren Chong"
+                    android:text="Vinny Chong"
                     android:textColor="@color/colorBlack"
                     android:layout_below="@+id/lblFrom"
                     android:layout_toEndOf="@+id/lblPostDate"

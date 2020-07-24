@@ -11,10 +11,10 @@
         android:icon="@drawable/icon_2nd_tab"
         android:title="" />
 
-    <item
+    <!--<item
         android:id="@+id/nav_add_post"
         android:icon="@drawable/icon_message"
-        android:title="" />
+        android:title="" />-->
 
     <item
         android:id="@+id/nav_notifications"

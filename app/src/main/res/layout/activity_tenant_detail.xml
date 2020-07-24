@@ -167,7 +167,7 @@
                 android:id="@+id/lblUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Darren Chong"
+                android:text="Vinny Chong"
                 android:textStyle="bold"
                 android:textSize="16sp"
                 android:textColor="#212121"
@@ -253,7 +253,7 @@
                         android:id="@+id/lblEmailTitleValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="darren@gmail.com"
+                        android:text="Vinny@gmail.com"
                         android:textStyle="bold"
                         android:textSize="12sp"
                         android:textColor="#000000"
@@ -576,6 +576,7 @@
                 app:layout_constraintEnd_toEndOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutSignatureDetail"
                     android:layout_width="match_parent"
                     android:layout_height="270dp">
 

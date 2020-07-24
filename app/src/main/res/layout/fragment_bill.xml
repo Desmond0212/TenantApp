@@ -154,7 +154,7 @@
                     android:id="@+id/lblUsername1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Chow Jun Wei"
+                    android:text="Eddie Zhang"
                     android:layout_below="@+id/lblBill1"
                     android:layout_marginStart="15dp"
                     android:layout_marginBottom="15dp"/>
@@ -228,7 +228,7 @@
                     android:id="@+id/lblUsername2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Darren Chong Teck Chuan"
+                    android:text="Vinny Chong Wei yan"
                     android:layout_below="@+id/lblBill2"
                     android:layout_marginStart="15dp"
                     android:layout_marginBottom="15dp"/>
@@ -302,7 +302,7 @@
                     android:id="@+id/lblUsername3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Desmond Wong"
+                    android:text="Shyan Chen"
                     android:layout_below="@+id/lblBill3"
                     android:layout_marginStart="15dp"
                     android:layout_marginBottom="15dp"/>

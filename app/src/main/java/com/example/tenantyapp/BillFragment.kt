@@ -97,7 +97,7 @@ class BillFragment : Fragment() {
         view.billsCardView1.setOnClickListener {
             val intent = Intent(activity, BillDetailsActivity::class.java)
             intent.putExtra("BillNumber", "BILL0033")
-            intent.putExtra("Username", "Chow Jun Wei")
+            intent.putExtra("Username", "Eddie Zhang")
             intent.putExtra("BillingStatus", "Paid")
             intent.putExtra("BillDate", "July 02, 2020")
             intent.putExtra("DueDate", "July 16, 2020")
@@ -111,7 +111,7 @@ class BillFragment : Fragment() {
         view.billsCardView2.setOnClickListener {
             val intent = Intent(activity, BillDetailsActivity::class.java)
             intent.putExtra("BillNumber", "BILL0032")
-            intent.putExtra("Username", "Darren Chong")
+            intent.putExtra("Username", "Vinny Chong")
             intent.putExtra("BillingStatus", "Overdue")
             intent.putExtra("BillDate", "June 18, 2020")
             intent.putExtra("DueDate", "July 02, 2020")
@@ -125,7 +125,7 @@ class BillFragment : Fragment() {
         view.billsCardView3.setOnClickListener {
             val intent = Intent(activity, BillDetailsActivity::class.java)
             intent.putExtra("BillNumber", "BILL0031")
-            intent.putExtra("Username", "Desmond Wong")
+            intent.putExtra("Username", "Jessy Chua")
             intent.putExtra("BillingStatus", "Paid")
             intent.putExtra("BillDate", "July 01, 2020")
             intent.putExtra("DueDate", "July 15, 2020")

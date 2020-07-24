@@ -46,14 +46,6 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_home, container, false)
 
-        /*val adapter = ViewAdapter(fragmentManager!!)
-
-        adapter.addFragment(HomeTopbarFragment())
-        adapter.addFragment(NewHomeFragment())
-        adapter.addFragment(BillFragment())
-        adapter.addFragment(ProfileFragment())
-        view.view_pager?.adapter = adapter*/
-
         viewPager = view.findViewById(R.id.view_pager)
 
         val adapter = ViewPagerAdapter(childFragmentManager)
@@ -65,6 +57,24 @@ class HomeFragment : Fragment() {
         view.view_pager?.adapter = adapter
         view.dot3?.setViewPager(view.view_pager)
 
+        view.layoutMessage1.visibility = View.VISIBLE
+        view.messageDivider.visibility = View.VISIBLE
+        view.layoutMessage2.visibility = View.VISIBLE
+        view.layoutBilling1.visibility = View.VISIBLE
+        view.billingDivider.visibility = View.VISIBLE
+        view.layoutBilling2.visibility = View.VISIBLE
+
+        view.messageDivider3.visibility = View.GONE
+        view.layoutMessage4.visibility = View.GONE
+        view.messageDivider2.visibility = View.GONE
+        view.layoutMessage3.visibility = View.GONE
+        view.layoutBilling4.visibility = View.GONE
+        view.billingDivider3.visibility = View.GONE
+        view.layoutBilling3.visibility = View.GONE
+        view.billingDivider2.visibility = View.GONE
+        view.layoutMessage5.visibility = View.GONE
+        view.messageDivider4.visibility = View.GONE
+
         view.view_pager.setOnPageChangeListener(object: ViewPager.OnPageChangeListener
         {
             override fun onPageScrollStateChanged(state: Int) {
@@ -75,29 +85,56 @@ class HomeFragment : Fragment() {
 
             }
 
-            override fun onPageSelected(position: Int) {
+            override fun onPageSelected(position: Int)
+            {
                 if (position == 1)
                 {
-                    notesCardView.visibility = View.VISIBLE
-                    propertySummaryCardView.visibility = View.VISIBLE
-                    lblMessage.visibility = View.GONE
-                    messageCardView.visibility = View.GONE
-                    lblBillMonth.visibility = View.GONE
-                    btnViewAll.visibility = View.GONE
-                    billingCardView.visibility = View.GONE
-                    //HomeTopbarFragment.newInstance("A-20-23", "")
-                    //lblUnitTitle.text = "A-20-23"
+                    notesCardView.visibility = View.GONE
+                    propertySummaryCardView.visibility = View.GONE
+
+                    billingDivider2.visibility = View.GONE
+                    messageDivider2.visibility = View.GONE
+                    billingDivider.visibility = View.GONE
+                    layoutMessage1.visibility = View.GONE
+                    messageDivider.visibility = View.GONE
+                    layoutMessage2.visibility = View.GONE
+                    layoutBilling1.visibility = View.GONE
+                    layoutBilling2.visibility = View.GONE
+
+                    messageDivider3.visibility = View.VISIBLE
+                    layoutMessage4.visibility = View.VISIBLE
+                    layoutMessage3.visibility = View.VISIBLE
+                    layoutBilling4.visibility = View.VISIBLE
+                    billingDivider3.visibility = View.VISIBLE
+                    layoutBilling3.visibility = View.VISIBLE
+                    layoutMessage5.visibility = View.VISIBLE
+                    messageDivider4.visibility = View.VISIBLE
+
                     HomeTopbarFragment.newInstance("A-20-23", "A-10-13")
                 }
                 else
                 {
                     notesCardView.visibility = View.GONE
                     propertySummaryCardView.visibility = View.GONE
-                    lblMessage.visibility = View.VISIBLE
-                    messageCardView.visibility = View.VISIBLE
-                    lblBillMonth.visibility = View.VISIBLE
-                    btnViewAll.visibility = View.VISIBLE
-                    billingCardView.visibility = View.VISIBLE
+
+                    layoutMessage1.visibility = View.VISIBLE
+                    messageDivider.visibility = View.VISIBLE
+                    layoutMessage2.visibility = View.VISIBLE
+                    layoutBilling1.visibility = View.VISIBLE
+                    billingDivider.visibility = View.VISIBLE
+                    layoutBilling2.visibility = View.VISIBLE
+
+                    messageDivider3.visibility = View.GONE
+                    layoutMessage4.visibility = View.GONE
+                    messageDivider2.visibility = View.GONE
+                    layoutMessage3.visibility = View.GONE
+                    layoutBilling4.visibility = View.GONE
+                    billingDivider3.visibility = View.GONE
+                    layoutBilling3.visibility = View.GONE
+                    billingDivider2.visibility = View.GONE
+                    layoutMessage5.visibility = View.GONE
+                    messageDivider4.visibility = View.GONE
+
                     //lblUnitTitle.text = "A-13-14"
                     HomeTopbarFragment.newInstance("A-33-89", "A-10-13")
                 }

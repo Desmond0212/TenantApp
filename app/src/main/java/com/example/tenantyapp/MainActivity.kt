@@ -180,12 +180,12 @@ class MainActivity : AppCompatActivity()
                 return@OnNavigationItemSelectedListener true
             }
 
-            R.id.nav_add_post ->
+            /*R.id.nav_add_post ->
             {
                 //startActivity(Intent(this, MessageFragment::class.java))
                 routeToFragment(MessageFragment())
                 return@OnNavigationItemSelectedListener true
-            }
+            }*/
 
             R.id.nav_notifications ->
             {

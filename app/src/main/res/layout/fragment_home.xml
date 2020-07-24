@@ -132,7 +132,7 @@
                         android:id="@+id/lblUsername1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Darren Chong"
+                        android:text="Eddie Zhang"
                         android:textColor="@color/colorBlack"
                         android:textStyle="bold"
                         android:layout_marginStart="15dp"/>
@@ -189,7 +189,7 @@
                         android:id="@+id/lblUsername2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Chow Jun Wei"
+                        android:text="Eddie Zhong"
                         android:textColor="@color/colorBlack"
                         android:textStyle="bold"
                         android:layout_marginStart="15dp"
@@ -468,7 +468,7 @@
                         android:id="@+id/lblTimeMsg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="9.35 pm"
+                        android:text="11.32 am"
                         android:textColor="@color/colorYellow"
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="15dp"/>
@@ -528,7 +528,7 @@
                         android:id="@+id/lblUsernameMsg2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Darren Chong"
+                        android:text="Jessy Chua"
                         android:textColor="@color/colorBlack"
                         android:textStyle="bold"
                         android:layout_marginStart="15dp"
@@ -538,7 +538,7 @@
                         android:id="@+id/lblTimeMsg2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="9.45 pm"
+                        android:text="8.45 pm"
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="15dp"/>
@@ -588,7 +588,7 @@
                         android:id="@+id/lblUsernameMsg3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Chow Jun Wei"
+                        android:text="Matt Zhing"
                         android:textColor="@color/colorBlack"
                         android:textStyle="bold"
                         android:layout_marginStart="15dp"
@@ -610,6 +610,124 @@
                         android:text="Hi...can i pay my bill late this month?"
                         android:textColor="@color/colorBlack"
                         android:layout_below="@+id/lblUsernameMsg3"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="15dp"/>
+
+                    <!--<TextView
+                        android:id="@+id/lblBadgeMsg3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:background="@drawable/rounded_badge_background_yellow"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/lblTimeMsg3"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="20dp"/>-->
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/messageDivider3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#DBDBDB"
+                    android:layout_below="@+id/layoutMessage3"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/layoutMessage4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/messageDivider3">
+
+                    <TextView
+                        android:id="@+id/lblUsernameMsg4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shyan Chen"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblTimeMsg4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="14.27 pm"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblMessageMsg4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Halo, air con not working..."
+                        android:textColor="@color/colorBlack"
+                        android:layout_below="@+id/lblUsernameMsg4"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="15dp"/>
+
+                    <!--<TextView
+                        android:id="@+id/lblBadgeMsg3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:background="@drawable/rounded_badge_background_yellow"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/lblTimeMsg3"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="20dp"/>-->
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/messageDivider4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#DBDBDB"
+                    android:layout_below="@+id/layoutMessage4"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/layoutMessage5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/messageDivider4">
+
+                    <TextView
+                        android:id="@+id/lblUsernameMsg5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shyan Chen"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblTimeMsg5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20.18 pm"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblMessageMsg5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bro, Toilet's light can't turn on"
+                        android:textColor="@color/colorBlack"
+                        android:layout_below="@+id/lblUsernameMsg5"
                         android:layout_marginStart="15dp"
                         android:layout_marginBottom="15dp"/>
 
@@ -715,7 +833,7 @@
                         android:id="@+id/lblMessageBilling"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Darren Chong Teck Chuan"
+                        android:text="Sharlin So"
                         android:textColor="@color/colorBlack"
                         android:layout_below="@+id/lblUsernameBilling"
                         android:layout_marginStart="15dp"
@@ -776,7 +894,7 @@
                         android:id="@+id/lblMessageBilling2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Chow Jun Wei"
+                        android:text="Chloe Chua"
                         android:textColor="@color/colorBlack"
                         android:layout_below="@+id/lblBillingMsg2"
                         android:layout_marginStart="15dp"
@@ -790,6 +908,124 @@
                         android:textColor="#00CFBA"
                         android:textStyle="bold"
                         android:layout_below="@+id/lblTimeBilling2"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="15dp"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/billingDivider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#DBDBDB"
+                    android:layout_below="@+id/layoutBilling2"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/layoutBilling3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/billingDivider2">
+
+                    <TextView
+                        android:id="@+id/lblBillingMsg3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="May 18, 2020"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/lblTimeBilling3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RM 1,500.00"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorBlack"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblMessageBilling3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vinny Chong"
+                        android:textColor="@color/colorBlack"
+                        android:layout_below="@+id/lblBillingMsg3"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <TextView
+                        android:id="@+id/billStatus3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Paid"
+                        android:textColor="#00CFBA"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/lblTimeBilling3"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="15dp"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/billingDivider3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#DBDBDB"
+                    android:layout_below="@+id/layoutBilling3"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/layoutBilling4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/billingDivider3">
+
+                    <TextView
+                        android:id="@+id/lblBillingMsg4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="May 04, 2020"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/lblTimeBilling4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RM 700.00"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorBlack"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="15dp"/>
+
+                    <TextView
+                        android:id="@+id/lblMessageBilling4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Eddie Zhang"
+                        android:textColor="@color/colorBlack"
+                        android:layout_below="@+id/lblBillingMsg4"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <TextView
+                        android:id="@+id/billStatus4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Paid"
+                        android:textColor="#00CFBA"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/lblTimeBilling4"
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="15dp"/>
 
@@ -843,7 +1079,7 @@
                             android:id="@+id/lblUsernameAndDate1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Darren Chong | July 20 2020"
+                            android:text="Vinny Chong | July 20 2020"
                             android:layout_below="@+id/lblMessageTitle1"
                             android:layout_marginStart="15dp"/>
 
